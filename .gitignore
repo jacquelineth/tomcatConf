@@ -1,0 +1,12 @@
+logs/
+logs/*
+temp/
+temp/**/*
+work/**/*
+
+bin/derby.log
+
+data/
+
+*.swp
+*~
