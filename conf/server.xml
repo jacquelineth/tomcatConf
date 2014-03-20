@@ -165,6 +165,7 @@
 			prefix="localhost_res_log." suffix=".txt" timestamp="true"/>		
 		<ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource85" type="javax.sql.DataSource" />
            
+		<!--Modify the WEB-INF/web.xml to set the modified context path for teamserver, testing, decisionService -->		
 	</Context>
 	<Context path="/testing85" docBase="testing.war" reloadable="true" crossContext="true">
 		<Logger className="org.apache.catalina.logger.FileLogger"
@@ -202,7 +203,8 @@
 	<Context path="/res80" docBase="res.war"   reloadable="true" crossContext="true">
 		<Logger className="org.apache.catalina.logger.FileLogger"
 			prefix="localhost_res_log." suffix=".txt" timestamp="true"/>
-		<ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource80" type="javax.sql.DataSource" /> 		
+		<ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource80" type="javax.sql.DataSource" /> 
+		<!--Modify the WEB-INF/web.xml to set the modified context path for teamserver, testing, decisionService -->		
 	</Context> 
 	<Context path="/testing80" docBase="testing.war" reloadable="true" crossContext="true">
 		<Logger className="org.apache.catalina.logger.FileLogger"
