@@ -46,7 +46,7 @@
     		      factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
     		      pathname="conf/tomcat-users.xml" />
       <Resource name="jdbc/ilogDataSource" auth="Container" type="javax.sql.DataSource" 
-              username="ILOG" password="" 
+              username="RTS" password="" 
               driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
               url="jdbc:derby:${catalina.base}/data/rtsdb80;create=true"  /> 
       <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
