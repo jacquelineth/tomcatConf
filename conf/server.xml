@@ -39,6 +39,8 @@
   <GlobalNamingResources>
     <!-- Editable user database that can also be used by
          UserDatabaseRealm to authenticate users
+         TJ  added defaultTransactionIsolation="READ_COMMITTED"
+         from https://search.apache.org/~fhanik/jdbc-pool/jdbc-pool.html#Common_Attributes recommended by P.RUAULT to avoid deadlock issue
     -->
     	<Resource name="UserDatabase" auth="Container"
     		      type="org.apache.catalina.UserDatabase"
@@ -46,11 +48,11 @@
     		      factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
     		      pathname="conf/tomcat-users.xml" />
       <Resource name="jdbc/ilogDataSource" auth="Container" type="javax.sql.DataSource" 
-              username="RTS" password="" 
+              username="RTS" password="" defaultTransactionIsolation="READ_COMMITTED"
               driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
               url="jdbc:derby:${catalina.base}/data/rtsdb80;create=true"  /> 
       <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
-              username="resdbAdmin" password="resdbAdmin"
+              username="resdbAdmin" password="resdbAdmin" defaultTransactionIsolation="READ_COMMITTED"
               driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
               url="jdbc:derby:C:/Cases/JRules/tomcat/data/resDb80;create=true"/>
   </GlobalNamingResources>
