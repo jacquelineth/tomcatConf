@@ -46,6 +46,7 @@
 		      factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
 		      pathname="conf/tomcat-users.xml" />
   <Resource name="jdbc/ilogDataSource85" type="javax.sql.DataSource" auth="Container" 
+            defaultTransactionIsolation="READ_COMMITTED"
 			username="ILOG" password="ILOG"
 			driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
 			url="jdbc:derby:C:/Cases/JRules/tomcat/data/rtsdb85;create=true"  /> 
@@ -193,6 +194,7 @@
       	<Context docBase="teamserver.war" path="/teamserver80" reloadable="true">
 
       	   <Resource name="jdbc/ilogDataSource" auth="Container" 
+      	            defaultTransactionIsolation="READ_COMMITTED"  
       				type="javax.sql.DataSource"
       				username="ILOG" password=""
       				driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
