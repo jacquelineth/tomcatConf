@@ -5,6 +5,7 @@ temp/**/*
 work/**/*
 
 bin/derby.log
+webapps*/*.war
 
 data/
 
