@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Context path="/res86" docBase="res.war" reloadable="true" crossContext="true">
+    <Logger className="org.apache.catalina.logger.FileLogger" prefix="ipv6_res_log." suffix=".txt" timestamp="true" />
+    <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container" username="resdbAdmin" password="resdbAdmin" driverClassName="org.apache.derby.jdbc.EmbeddedDriver" url="jdbc:derby:C:/Cases/JRules/tomcat/data/resDb86;create=true" />
+    <!--Modify the WEB-INF/web.xml to set the modified context path for teamserver, testing, decisionService -->
+</Context>
