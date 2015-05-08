@@ -6,5 +6,4 @@
         driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
             url="jdbc:derby:${Catalina.base}/data/rtsdb87;create=true"  /> 
 
-	<Logger className="org.apache.catalina.logger.FileLogger" prefix="rts87_log." suffix=".txt" timestamp="true" />
 </Context>
