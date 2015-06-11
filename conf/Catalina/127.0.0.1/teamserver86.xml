@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<Context docBase="C:\IBM\ODM86\teamserver\applicationservers\tomcat7\teamserver.war"  reloadable="true">
+<Context docBase="C:\IBM\ODM86\teamserver\applicationservers\tomcat\teamserver.war"  reloadable="true">
   <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container" defaultTransactionIsolation="READ_COMMITTED" username="ILOG" password="ILOG" driverClassName="org.apache.derby.jdbc.EmbeddedDriver" url="jdbc:derby:C:/Cases/JRules/tomcat/data/rtsdb86;create=true"
   />
   <Logger className="org.apache.catalina.logger.FileLogger" prefix="ipv6_rts86_log." suffix=".txt" timestamp="true" />
