@@ -4,6 +4,6 @@
               defaultTransactionIsolation="READ_COMMITTED"
         username="ILOG" password="ILOG"
         driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
-            url="jdbc:derby:${Catalina.base}/data/rtsdb87;create=true"  /> 
+            url="jdbc:derby:../data/rtsdb87;create=true"  /> 
 
 </Context>
