@@ -31,7 +31,10 @@
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
   <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
-    <!-- tj Added requires the JMX extra JAR in /lib-->
+    <!-- tj Added requires the JMX extra JAR in CATALINA_HOME/lib
+    https://tomcat.apache.org/tomcat-7.0-doc/monitoring.html
+    Listener can be commented out if no JMX monitoring
+    -->
   <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="10001" rmiServerPortPlatform="10002" />
   <!-- Global JNDI resources
        Documentation at /docs/jndi-resources-howto.html

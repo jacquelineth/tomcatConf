@@ -22,7 +22,6 @@ rem $Id: startup.bat 895392 2010-01-03 14:02:31Z kkolinko $
 rem ---------------------------------------------------------------------------
 set CATALINA_BASE=%~dp0%..
 CALL %~dp0%setenv.bat
-set JAVA_OPTS= -server -Xms256m -Xmx1024m -XX:MaxPermSize=512m 	-Dcom.sun.management.jmxremote.password.file=%CATALINA_BASE%\conf\jmxremote.password -Dcom.sun.management.jmxremote.access.file=%CATALINA_BASE%\conf\jmxremote.access -Dcom.sun.management.jmxremote.ssl=false
   
 rem -XX:NewSize=512m -XX:MaxNewSize=512m -XX:PermSize=512m  -XX:MaxPermSize=512m -XX:+DisableExplicitGC
 rem Guess CATALINA_HOME if not defined
