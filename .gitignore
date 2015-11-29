@@ -10,3 +10,5 @@ data/
 
 *.swp
 *~
+**/*.orig
+webappDefault/**
