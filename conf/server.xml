@@ -182,9 +182,12 @@
            <!--  <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                    prefix="localhost70_access_log" suffix=".txt"
                    pattern="%h %l %u  %U %t &quot;%r&quot;  %S  %s %b " /> -->
-	       <Host name="localhost"  appBase="webapps87" unpackWARs="false" autoDeploy="true" deployOnStartup="false">
+	       <Host name="localhost"  appBase="webapps87" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
 
+         </Host>
+    
 
+         <Host name="127.0.0.1"  appBase="webapps88" unpackWARs="false" autoDeploy="true" deployOnStartup="false">
 
           </Host>    
         </Engine>
