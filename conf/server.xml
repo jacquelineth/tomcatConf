@@ -128,7 +128,7 @@
                resourceName="UserDatabase"/>
       </Realm>
 
-      <Host name="localhost"  appBase="webapps85" unpackWARs="false" autoDeploy="true" deployOnStartup="false">
+      <Host name="localhost"  appBase="webapps85" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
@@ -146,7 +146,7 @@
       </Host>
 
 
-      <Host name="W530ILOG"  appBase="webapps80" unpackWARs="false" autoDeploy="true" deployOnStartup="false">
+      <Host name="W530ILOG"  appBase="webapps80" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
@@ -176,8 +176,9 @@
           <!-- request.useSecret="true"  request.secret="single" requiredSecret="single" -->
           
         <Engine name="CatalinaOLD" defaultHost="localhost">
+        <!--ODM88 : https://www-01.ibm.com/support/knowledgecenter/SSQP76_8.8.0/com.ibm.odm.distrib.config.tom/config_dc_tomcat/con_tcat_dc_security_bc.html?lang=en  -->
           <Realm className="org.apache.catalina.realm.LockOutRealm">
-            <Realm className="org.apache.catalina.realm.UserDatabaseRealm"  resourceName="UserDatabase"/>
+            <Realm className="org.apache.catalina.realm.UserDatabaseRealm"  resourceName="UserDatabase" allRolesMode="authOnly"/>
           </Realm>     
            <!--  <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                    prefix="localhost70_access_log" suffix=".txt"
