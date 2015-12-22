@@ -36,12 +36,13 @@
   <role rolename="Eligibility"/>
   <role rolename="Validator"/>
   <role rolename="manager-gui"/>
+  <role rolename="admin-gui"/>
    
 <role rolename="resAdministrators"/>
 <role rolename="resDeployers"/>
 <role rolename="resMonitors"/>
    
-   <user username="tomcat" password="tomcat" roles="tomcat,manager-gui,role1"/>
+   <user username="tomcat" password="tomcat" roles="tomcat,manager-gui,role1,admin-gui,admin-script"/>
   <user username="both" password="tomcat" roles="tomcat,role1"/>
   <user username="role1" password="tomcat" roles="role1"/>
   <user username="rtsUser1" password="rtsUser1" roles="rtsUser"/>
