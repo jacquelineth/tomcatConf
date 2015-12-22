@@ -6,8 +6,10 @@ work/**/*
 
 bin/derby.log
 webapps*/*.war
+webapps*/**/*
 
 data/
 
 *.swp
 *~
+
