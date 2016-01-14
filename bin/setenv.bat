@@ -1,4 +1,4 @@
-set CATALINA_HOME=C:\DevTools\apache-tomcat-7.0.65
+set CATALINA_HOME=C:\DevTools\apache-tomcat-7.0.67
 set JAVA_HOME=C:\jdk1.8.0_66
 
 set CATLINA_OPTS= -d64  -DCatalina.base=%CATALINA_BASE%
