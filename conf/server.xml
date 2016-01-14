@@ -146,7 +146,7 @@
       </Host>
 
 
-      <Host name="W530ILOG"  appBase="webapps80" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
+      <Host name="W530ILOG"  appBase="webapps80" unpackWARs="false" autoDeploy="true" deployOnStartup="true">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
@@ -188,9 +188,9 @@
          </Host>
     
 
-         <Host name="127.0.0.1"  appBase="webapps88" unpackWARs="false" autoDeploy="true" deployOnStartup="false">
+         <Host name="127.0.0.1"  appBase="webapps88" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
 
-          </Host>    
+          </Host>   -
         </Engine>
   </Service>
 </Server>
