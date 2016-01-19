@@ -11,4 +11,6 @@ data/
 *.swp
 *~
 **/*.orig
+**/*~
+**/*.bak
 webappDefault/**
