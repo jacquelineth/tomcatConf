@@ -124,11 +124,10 @@
              resources under the key "UserDatabase".  Any edits
              that are performed against this UserDatabase are immediately
              available for use by the Realm.  -->
-        <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
-               resourceName="UserDatabase"/>
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
       </Realm>
 
-      <Host name="localhost"  appBase="webapps85" unpackWARs="false" autoDeploy="true" deployOnStartup="false">
+      <Host name="localhost"  appBase="webapps88" unpackWARs="false" autoDeploy="true" deployOnStartup="true">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
@@ -140,53 +139,13 @@
              Documentation at: /docs/config/valve.html
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
-               prefix="localhost85_access_log." suffix=".txt"
+               prefix="localhost_access_log." suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
       </Host>
 
-
-      <Host name="W530ILOG"  appBase="webapps80" unpackWARs="false" autoDeploy="true" deployOnStartup="false">
-
-        <!-- SingleSignOn valve, share authentication between web applications
-             Documentation at: /docs/config/valve.html -->
-        <!--
-        <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
-        -->
-
-        <!-- Access log processes all example.
-             Documentation at: /docs/config/valve.html
-             Note: The pattern used is equivalent to using pattern="common" -->
-        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
-               prefix="W530ILOG_access_log." suffix=".txt"
-               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
-
-
-      </Host>
-    
-
-      <Host name="127.0.0.1"  appBase="webapps86" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
-
-      </Host>      
+ 
     </Engine>
   </Service>
-    <Service name="CatalinaOLD">
-        <Connector port="8083" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
-        <Connector port="8110" protocol="AJP/1.3" redirectPort="8443" allowTrace="true" />
-          <!-- request.useSecret="true"  request.secret="single" requiredSecret="single" -->
-          
-        <Engine name="CatalinaOLD" defaultHost="localhost">
-          <Realm className="org.apache.catalina.realm.LockOutRealm">
-            <Realm className="org.apache.catalina.realm.UserDatabaseRealm"  resourceName="UserDatabase"/>
-          </Realm>     
-           <!--  <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
-                   prefix="localhost70_access_log" suffix=".txt"
-                   pattern="%h %l %u  %U %t &quot;%r&quot;  %S  %s %b " /> -->
-	       <Host name="localhost"  appBase="webapps87" unpackWARs="false" autoDeploy="true" deployOnStartup="false">
 
-
-
-          </Host>    
-        </Engine>
-  </Service>
 </Server>
