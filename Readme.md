@@ -1,4 +1,4 @@
-##Tomcat configurations for ODM
+## Tomcat configurations for ODM
 ============
 
 Based out **Tomcat**  CATALINA_HOME & CATALINA_BASE, this project intent to provide various configuration (branches), in a ready to boot set-up. Refer to Tomcat RUNNING.txt
