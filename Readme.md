@@ -1,7 +1,7 @@
-##Tomcat configurations for ODM
-============
+# Tomcat configurations for ODM
 
-Based out **Tomcat**  CATALINA_HOME & CATALINA_BASE, this project intent to provide various configuration (branches), in a ready to boot set-up. Refer to Tomcat RUNNING.txt
+
+ ## Based out **Tomcat**  CATALINA_HOME & CATALINA_BASE, this project intent to provide various configuration (branches), in a ready to boot set-up. Refer to Tomcat RUNNING.txt
 
 - Download Tomcat 7 from [Apache](http://tomcat.apache.org/download-70.cgi)
   - Unzip in a folder that would be the new CATALINA_HOME
@@ -11,10 +11,16 @@ Based out **Tomcat**  CATALINA_HOME & CATALINA_BASE, this project intent to prov
   - and  conf/ subfolders to adjust your deployed WAR files location in docBase attribute.
   - you may also adjust the JDBC driver in each deployment XML
 
-Start & stop
+### Start & stop
 - Use bin startup.sh or startup.bat according to your environment
 - Stop with shutdwon.bat
 - To reset the environment use clean.bat
+
+### TCP/IP Mode
+A new folder ***tcpIP*** provides a batch file (**configTcpip.bat**) to generate the new res.war file which will be deployed in *webapps88*. Set the ODM Home, and modify the default tcip property if required
+Then in your DecisionService or any XU you must update the ra.xml's plugin definition with 
+
+    {pluginClass=Management,xuName=default,protocol=tcpip,tcpip.port=1883,tcpip.host=localhost,tcpip.retryInterval=2000}
 
 
 You must provide ODM WARs location, and adapt WARs path in the context.xml docBase.
