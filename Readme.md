@@ -28,12 +28,15 @@
   - you may also adjust the JDBC driver in each deployment XML
 
 
-### TCP/IP Mode
 
 Two approaches, zeroconf or permanent. Although created for ODM88 branch, just changing `ODM_HOME` is sufficient.
+
 #### zeroconf
 By default conf/Catalina/localhost/res.xml, will overwrite the `management.protocol` to **tcpip**
 #### Permanent
+
+
+### TCP/IP Mode
 A new folder ***tcpIP*** provides a batch file (**configTcpip.bat**) to generate the new res.war file which will be deployed in *webapps88*. Set the ODM Home, and modify the default tcip property if required
 Then in your DecisionService or any XU you must update the ra.xml's plugin definition with 
 

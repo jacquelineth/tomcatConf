@@ -36,6 +36,8 @@
     Listener can be commented out if no JMX monitoring
     -->
   <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="10001" rmiServerPortPlatform="10002" />
+   <!--and adjust the setenv.bat `JAVA_OPTS` to remove any JMX related properties -->
+
   <!-- Global JNDI resources
        Documentation at /docs/jndi-resources-howto.html
   -->
