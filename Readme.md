@@ -1,25 +1,42 @@
-##Tomcat configurations for ODM
-============
+# Tomcat configurations for ODM
 
-Based out **Tomcat**  CATALINA_HOME & CATALINA_BASE, this project intent to provide various configuration (branches), in a ready to boot set-up. Refer to Tomcat RUNNING.txt
 
-- Download Tomcat 7 from [Apache](http://tomcat.apache.org/download-70.cgi)
+ ## Based out **Tomcat**   CATALINA_BASE feature , this project intent to provide various configuration (branches), in a ready to boot set-up.
+ 
+  The main idea is to not have to deploy/copy any WARS, but use CATALINA_BASE and ODM_HOME to retrieve required WARS at startup. Refer to Tomcat [RUNNING.txt](http://tomcat.apache.org/tomcat-7.0-doc/RUNNING.txt) for more information on this feature.
+
+### Install
+
+- Download Tomcat 7 once, from [Apache](http://tomcat.apache.org/download-70.cgi)
   - Unzip in a folder that would be the new CATALINA_HOME
-- Edit bin/setenv.bat to set your CATALINA_HOME  and JAVA_HOME .
-- Edit conf/server.xml
-  - to turn on/off the auto deployment of WARs
-  - and  conf/ subfolders to adjust your deployed WAR files location in docBase attribute.
-  - you may also adjust the JDBC driver in each deployment XML
+- Recommended to add  JMX support with additional  [catalina-jmx-remote.jar](http://ftp.cixug.es/apache/tomcat/tomcat-7/v7.0.67/bin/extras/catalina-jmx-remote.jar)
+ - Alternatively to remove this feature uncomment  in  repository's conf/server.xml the `<Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="10001" rmiServerPortPlatform="10002" />` and adjust the setenv.bat `JAVA_OPTS` to remove any JMX related properties 
+- Unzip or clone this repository branch
+ - Edit bin/setenv.bat to adjust `CATALINA_HOME`  , `JAVA_HOME` , `ODM_HOME` .
 
-Start & stop
+
+### Start & stop
 - Use bin startup.sh or startup.bat according to your environment
 - Stop with shutdwon.bat
 - To reset the environment use clean.bat
 
+### Fine tune
 
-You must provide ODM WARs location, and adapt WARs path in the context.xml docBase.
-The default DB is embedded Derby with /data  , other JDBC jars should be added in /lib.
-There is also a setup to use Derby Network server with startDeby.bat/stopDerby.bat
+- Edit conf/server.xml
+  - to turn on/off the auto deployment of WARs attributes :`autoDeploy="true" deployOnStartup="true" `
+  - and  conf/ subfolders to adjust your deployed WAR files location in `docBase` attribute.
+  - you may also adjust the JDBC driver in each deployment XML
 
 
-To know more on JRules/ODM : [ODM site](http://www-03.ibm.com/software/products/en/category/operational-decision-management)
+
+Two approaches, zeroconf or permanent. Although created for ODM88 branch, just changing `ODM_HOME` is sufficient.
+#### zeroconf
+By default conf/Catalina/localhost/res.xml, will overwrite the `management.protocol` to **tcpip**
+#### Permanent
+
+
+The configured DB is embedded Derby stored in /data, other JDBC jars should be added in /lib.
+There is also a setup to use Derby Network server with startDeby.bat/stopDerby.bat, adjust the datasource definition accordingly.
+
+
+To know more on ODM : [ODM site](http://www-03.ibm.com/software/products/en/category/operational-decision-management)
