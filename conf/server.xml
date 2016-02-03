@@ -48,6 +48,9 @@
       <Resource name="jdbc/ilogDataSource" auth="Container" type="javax.sql.DataSource" 
               username="ILOG" password="" 
               driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
+              defaultTransactionIsolation="READ_COMMITTED"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
               url="jdbc:derby:${catalina.base}/data/rtsdb80;create=true"  /> 
       <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
               username="resdbAdmin" password="resdbAdmin"
@@ -129,7 +132,7 @@
                resourceName="UserDatabase"/>
       </Realm>
 
-      <Host name="localhost"  appBase="webapps80" unpackWARs="false" autoDeploy="true">
+      <Host name="localhost"  appBase="webapp80" unpackWARs="false" autoDeploy="true">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
@@ -144,33 +147,24 @@
                prefix="localhost_access_log." suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
-        <Context docBase="teamserver.war" path="/teamserver" reloadable="true">
-        	<!--<ResourceLink name="jdbc/ilogDataSource" global="jdbc/ilogDataSource" type="javax.sql.DataSource" /> -->
-        	<!--<Resource name="jdbc/ilogDataSource" auth="Container" 
-        			type="javax.sql.DataSource"
-        			username="dbUser" password="dbPassword"
-        			driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
-        			url="jdbc:derby:${catalina.base}/data/rtsdb;create=true"  />
-        	
-        	   <Resource name="jdbc/ilogDataSource" auth="Container" 
-        			type="javax.sql.DataSource"
-        			username="ILOG" password=""
-        			driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
-        			url="jdbc:derby:${catalina.base}/data/rtsdb80;create=true" />-->
-            <ResourceLink name="jdbc/ilogDataSource" global="jdbc/ilogDataSource" type="javax.sql.DataSource" /> 
-        			 
-        </Context>
-      	<Context path="/res" docBase="res.war"   reloadable="true" crossContext="true">
+ <!--
+        <Context path="/res" docBase="${ODM_HOME}/executionserver/applicationservers/tomcat7/res.war"   reloadable="true" crossContext="true">
       		<Logger className="org.apache.catalina.logger.FileLogger" prefix="localhost_res_log." suffix=".txt" timestamp="true"/>		
       		<ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource" type="javax.sql.DataSource" />      
       	</Context>
+       
+        <Context docBase="${ODM_HOME}/teamserver/applicationservers/tomcat7/teamserver.war" path="/teamserver" reloadable="true">
+            <ResourceLink name="jdbc/ilogDataSource" global="jdbc/ilogDataSource" type="javax.sql.DataSource" /> 			 
+        </Context>
         <Context path="/testing" docBase="testing.war" reloadable="true" crossContext="true">
           <Logger className="org.apache.catalina.logger.FileLogger" prefix="localhost_res_log." suffix=".txt" timestamp="true"/>
             <ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource" type="javax.sql.DataSource" />
         </Context>
-        <Context path="/DecisionService80" docBase="DecisionService.war" reloadable="true" crossContext="true">
+        <Context path="/DecisionService" docBase="DecisionService.war" reloadable="true" crossContext="true">
           <ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource" type="javax.sql.DataSource" />
         </Context>
+-->
+
       </Host>
     </Engine>
   </Service>

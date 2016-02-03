@@ -22,8 +22,7 @@ rem $Id: shutdown.bat 895392 2010-01-03 14:02:31Z kkolinko $
 rem ---------------------------------------------------------------------------
 set CATALINA_BASE=%~dp0%..
 CALL %~dp0%setenv.bat
-set CATALINA_HOME=C:\DevTools\apache-tomcat-7.0.41
-set JAVA_HOME=C:\jdk1.7.0_25
+ 
 rem Guess CATALINA_HOME if not defined
 set "CURRENT_DIR=%cd%"
 if not "%CATALINA_HOME%" == "" goto gotHome

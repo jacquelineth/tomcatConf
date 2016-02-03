@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+        <Context  docBase="${catalina.base}/../../tools/dbdump/decisioncenter-dbdump.war" reloadable="true" crossContext="true">
+          <ResourceLink name="jdbc/ilogDataSource" global="jdbc/ilogDataSource" type="javax.sql.DataSource" />
+        </Context>

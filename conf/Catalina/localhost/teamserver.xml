@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+        <Context docBase="${ODM_HOME}/teamserver/applicationservers/tomcat7/teamserver.war"  reloadable="true">
+            <ResourceLink name="jdbc/ilogDataSource" global="jdbc/ilogDataSource" type="javax.sql.DataSource" /> 			 
+        </Context>
