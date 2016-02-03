@@ -1,8 +1,10 @@
-set ODM_HOME=C:\IBM\ODM88
-set ANT_HOME=%ODM_HOME%\shared\tools\ant
-set executionserver.home=%ODM_HOME%\executionserver
+CALL ..\bin\setenv.bat
 
-set CATALINA_BASE=%~dp0%..
+
+set ANT_HOME=%ODM_HOME%\shared\tools\ant
+
+
+
 
 set JAVA_HOME=C:\jdk1.8.0_66
 
