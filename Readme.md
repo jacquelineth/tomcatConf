@@ -1,7 +1,7 @@
 # Tomcat configurations for ODM
 
 
- ## Based out **Tomcat**   CATALINA_BASE feature , this project intent to provide various configuration (branches), in a ready to boot set-up.
+## Based out **Tomcat**   CATALINA_BASE feature , this project intent to provide various configuration (branches), in a ready to boot set-up.
  
   The main idea is to not have to deploy/copy any WARS, but use CATALINA_BASE and ODM_HOME to retrieve required WARS at startup. Refer to Tomcat [RUNNING.txt](http://tomcat.apache.org/tomcat-7.0-doc/RUNNING.txt) for more information on this feature.
 
@@ -28,7 +28,7 @@
   - you may also adjust the JDBC driver in each deployment XML
 
 
-
+### TCPIP mode
 Two approaches, zeroconf or permanent. Although created for ODM88 branch, just changing `ODM_HOME` is sufficient.
 #### zeroconf
 By default conf/Catalina/localhost/res.xml, will overwrite the `management.protocol` to **tcpip**
