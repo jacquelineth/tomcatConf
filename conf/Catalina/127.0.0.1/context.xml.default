@@ -42,13 +42,11 @@ web.xml too for that, though **** -->
     <!--
     <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
     -->
-        <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
-     username="resdbAdmin" password="resdbAdmin" 
-     factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
-     jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
-     driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
-     url='${res.datasource.derby.name}' />
-    <!--Modify the WEB-INF/web.xml to set the modified context path for teamserver, testing, decisionService -->
-
-
+    	    <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container" 
+              defaultTransactionIsolation="READ_COMMITTED"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
+        username="ILOG" password="ILOG"
+        driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
+        url='${teamserver.datasource.derby.name}'  /> 
 </Context>
