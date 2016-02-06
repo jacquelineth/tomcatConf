@@ -1,7 +1,7 @@
 # Tomcat configurations for ODM
 
 
-## Based out **Tomcat**   CATALINA_BASE feature , this project intent to provide various configuration (branches), in a ready to boot set-up.
+ ## Based out **Tomcat**   CATALINA_BASE feature , this project intent to provide various configuration (branches), in a ready to boot set-up.
  
   The main idea is to not have to deploy/copy any WARS, but use CATALINA_BASE and ODM_HOME to retrieve required WARS at startup. Refer to Tomcat [RUNNING.txt](http://tomcat.apache.org/tomcat-7.0-doc/RUNNING.txt) for more information on this feature.
 
@@ -27,12 +27,30 @@
   - and  conf/ subfolders to adjust your deployed WAR files location in `docBase` attribute.
   - you may also adjust the JDBC driver in each deployment XML
 
+### ZeroConf Branch
+This is a streamlined version that deploys all DC and RES webapps while only editing 2 config files:
+1. Edit bin/setenv.bat to adjust `CATALINA_HOME`  , `JAVA_HOME` , `ODM_HOME` .
+2. Edit last 2 lines of conf/catalina.properties to adjust the name of the embedded Derby folder URL (rtsdb and resdb )
 
-### TCPIP mode
+```shell
+        teamserver.datasource.derby.name=jdbc:derby:../data/rtsdb88;create=true
+        res.datasource.derby.name=jdbc:derby:../data/resdb88;create=true
+ ```   
+
+DC modules is deployed over http://127.0.0.1:8080 while RES modules are on http://localhost:8080
+
+
+### TCP/IP Mode
+
 Two approaches, zeroconf or permanent. Although created for ODM88 branch, just changing `ODM_HOME` is sufficient.
 #### zeroconf
 By default conf/Catalina/localhost/res.xml, will overwrite the `management.protocol` to **tcpip**
 #### Permanent
+A new folder ***tcpIP*** provides a batch file (**configTcpip.bat**) to generate the new res.war file which will be deployed in *webapps88*. Set the ODM Home, and modify the default tcip property if required
+Then in your DecisionService or any XU you must update the ra.xml's plugin definition with 
+
+    {pluginClass=Management,xuName=default,protocol=tcpip,tcpip.port=1883,tcpip.host=localhost,tcpip.retryInterval=2000}
+
 
 
 The configured DB is embedded Derby stored in /data, other JDBC jars should be added in /lib.
