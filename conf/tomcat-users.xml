@@ -37,7 +37,16 @@
   <role rolename="Validator"/>
   <role rolename="manager-gui"/>
   <role rolename="admin-gui"/>
-   
+  <!-- Decision Center -->
+  <role rolename="ruleViewer"/>
+  <role rolename="ruleEditor"/>
+  <role rolename="mycompany_rule_experts"/>
+  <role rolename="mycompany_home_insurance_PM"/>
+  <role rolename="mycompany_car_insurance_PM"/>
+  <role rolename="mycompany_insurancerules_admin"/>
+    
+  
+     
 <role rolename="resAdministrators"/>
 <role rolename="resDeployers"/>
 <role rolename="resMonitors"/>
@@ -46,11 +55,25 @@
   <user username="both" password="tomcat" roles="tomcat,role1"/>
   <user username="role1" password="tomcat" roles="role1"/>
   <user username="rtsUser1" password="rtsUser1" roles="rtsUser"/>
-  <user username="rtsAdmin" password="rtsAdmin" roles="rtsUser,rtsInstaller,rtsAdministrator"/>
-  <user username="rtsConfig" password="rtsConfig" roles="rtsUser,rtsConfigManager"/>
+  <user username="rtsAdmin" password="rtsAdmin" roles="rtsUser,rtsConfigManager,rtsInstaller,rtsAdministrator"/>
+   <user username="rtsAdmin1" password="rtsAdmin1" roles="rtsUser,rtsConfigManager,rtsInstaller,rtsAdministrator"/>
+  <user username="rtsAdmin2" password="rtsAdmin2" roles="rtsUser,rtsConfigManager,rtsInstaller,rtsAdministrator"/>
+  <user username="rtsConfig" password="rtsConfig" roles="rtsUser,rtsConfigManager,rtsInstaller"/>
   <user username="rtsInstall" password="rtsInstall" roles="rtsUser,rtsInstaller"/>
   <user username="Eli" password="Eli" roles="Eligibility,rtsUser"/>
-  <user username="Val" password="Val" roles="Validator,Eligibility,rtsUser"/> 
+  <user username="Val" password="Val" roles="Validator,Eligibility,rtsUser"/>
+  <user username="joe" password="helloworld" roles="rtsUser,mycompany_car_insurance_PM,ruleViewer" />
+  <user username="jack" password="helloworld" roles="rtsUser,mycompany_home_insurance_PM,ruleEditor" />
+  <user username="averell" password="helloworld" roles="rtsAdministrator" />
+  <user username="william" password="helloworld" roles="rtsUser,mycompany_insurancerules_admin" />
+  <user username="billy" password="helloworld" roles="rtsUser,mycompany_car_insurance_PM,mycompany_home_insurance_PM,mycompany_rule_experts" />
+  <user username="phil" password="helloworld" roles="rtsUser,mycompany_rule_experts" />
+  <user username="Paul" password="Paul" roles="rtsUser" />
+  <user username="Bea" password="Bea" roles="rtsUser" />
+  <user username="Abu" password="Abu"  roles="rtsUser " />
+  
+  
+   
   <user username="resAdmin" password="resAdmin" roles="resAdministrators,resDeployers,resMonitors"/>
 <user username="resDeployer" password="resDeployer" roles="resDeployers,resMonitors"/>
 <user username="resMonitor" password="resMonitor" roles="resMonitors"/>
