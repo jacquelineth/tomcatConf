@@ -1,11 +1,20 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<Context docBase="C:\IBM\ODM871\teamserver\applicationservers\tomcat7\decisioncenter.war" reloadable="true">
-	    <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container" 
+<Context docBase="C:\IBM\ODM851\teamserver\applicationservers\tomcat7\decisioncenter.war" reloadable="true">
+	  <!--  <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container"
               defaultTransactionIsolation="READ_COMMITTED"
               factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
               jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
         username="ILOG" password="ILOG"
         driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
-            url="jdbc:derby:../data/rtsdb871;create=true"  /> 
+            url="jdbc:derby:../data/rtsdb851;create=true"  />
+		-->
+					<Resource  name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container"
+						defaultTransactionIsolation="READ_COMMITTED"
+						factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+						jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=5000)"
+						username="USER_PTOOL_D_CENTER" password="USER_PTOOL_D_CENTER"
+						driverClassName="oracle.jdbc.OracleDriver"
+						url="jdbc:oracle:thin:@9.30.145.120:1521:odm"
+						/>
 
 </Context>
