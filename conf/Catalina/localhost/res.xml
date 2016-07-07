@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<Context  docBase="C:\IBM\ODM88\executionserver\applicationservers\tomcat7\res.war" reloadable="true">
-    <Logger className="org.apache.catalina.logger.FileLogger" prefix="odm88_res_log" suffix=".txt" timestamp="true" />
+<Context  docBase="C:\IBM\ODM871\executionserver\applicationservers\tomcat7\res.war" reloadable="true">
+    <Logger className="org.apache.catalina.logger.FileLogger" prefix="ODM871_res_log" suffix=".txt" timestamp="true" />
     <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
      username="resdbAdmin" password="resdbAdmin" 
      driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
-     url="jdbc:derby:../data/resDb88;create=true" />
+     url="jdbc:derby:../data/resDb871;create=true" />
     <!--Modify the WEB-INF/web.xml to set the modified context path for teamserver, testing, decisionService -->
 </Context>
