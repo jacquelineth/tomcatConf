@@ -54,7 +54,12 @@
    <user username="tomcat" password="tomcat" roles="tomcat,manager-gui,role1,admin-gui,admin-script"/>
   <user username="both" password="tomcat" roles="tomcat,role1"/>
   <user username="role1" password="tomcat" roles="role1"/>
-  <user username="rtsUser1" password="rtsUser1" roles="rtsUser"/>
+  <user username="rtsUser1" password="rtsUser1" roles="rtsUser" />
+  <user username="rtsUser2" password="rtsUser2" roles="rtsUser" />
+  <user username="rtsUser3" password="rtsUser3" roles="rtsUser" />
+  <user username="rtsUser4" password="rtsUser4" roles="rtsUser" />
+  <user username="rtsUser5" password="rtsUser5" roles="rtsUser" />
+  <user username="rtsUser6" password="rtsUser6" roles="rtsUser" />
   <user username="rtsAdmin" password="rtsAdmin" roles="rtsUser,rtsConfigManager,rtsInstaller,rtsAdministrator"/>
    <user username="rtsAdmin1" password="rtsAdmin1" roles="rtsUser,rtsConfigManager,rtsInstaller,rtsAdministrator"/>
   <user username="rtsAdmin2" password="rtsAdmin2" roles="rtsUser,rtsConfigManager,rtsInstaller,rtsAdministrator"/>
