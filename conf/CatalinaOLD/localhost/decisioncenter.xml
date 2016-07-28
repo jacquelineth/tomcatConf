@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8' ?>
-<Context docBase="C:\IBM\ODM871\teamserver\applicationservers\tomcat7\decisioncenter.war" reloadable="true">
-	    <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container" 
-              defaultTransactionIsolation="READ_COMMITTED"
-        username="ILOG" password="ILOG"
-        driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
-            url="jdbc:derby:../data/rtsdb87;create=true"  /> 
-
-</Context>

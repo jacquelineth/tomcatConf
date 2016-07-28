@@ -128,7 +128,7 @@
                resourceName="UserDatabase"/>
       </Realm>
 
-      <Host name="localhost"  appBase="webapps85" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
+      <Host name="localhost"  appBase="webapps88" unpackWARs="false" autoDeploy="true" deployOnStartup="true">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
@@ -146,7 +146,7 @@
       </Host>
 
 
-      <Host name="W530ILOG"  appBase="webapps80" unpackWARs="false" autoDeploy="true" deployOnStartup="true">
+      <Host name="W530ILOG"  appBase="webapps88_res" unpackWARs="false" autoDeploy="true" deployOnStartup="true">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
@@ -165,7 +165,7 @@
       </Host>
     
 
-      <Host name="127.0.0.1"  appBase="webapps86" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
+      <Host name="127.0.0.1"  appBase="webapps88" unpackWARs="false" autoDeploy="true" deployOnStartup="true">
 
       </Host>      
     </Engine>
@@ -183,14 +183,14 @@
            <!--  <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                    prefix="localhost70_access_log" suffix=".txt"
                    pattern="%h %l %u  %U %t &quot;%r&quot;  %S  %s %b " /> -->
-	       <Host name="localhost"  appBase="webapps87" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
+	       <Host name="localhost"  appBase="webapps88" unpackWARs="false" autoDeploy="true" deployOnStartup="true">
 
          </Host>
     
 
-         <Host name="127.0.0.1"  appBase="webapps88" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
+         <Host name="127.0.0.1"  appBase="webapps88" unpackWARs="false" autoDeploy="true" deployOnStartup="true">
 
-          </Host>   -
+          </Host> 
         </Engine>
   </Service>
 </Server>

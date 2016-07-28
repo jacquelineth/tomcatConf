@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<Context path="/DecisionService" docBase="C:\IBM\ODM871\executionserver\applicationservers\tomcat7\DecisionService.war" reloadable="true" crossContext="true">
+<Context path="/DecisionService" docBase="DecisionService" reloadable="true" crossContext="true">
     <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container" username="resdbAdmin" password="resdbAdmin" driverClassName="org.apache.derby.jdbc.EmbeddedDriver" url="jdbc:derby:../data/resDb87;create=true" />
 </Context>

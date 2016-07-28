@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Licensed Materials - Property of IBM
+  5724X98 5724Y15 5655V82 5724X99 5724Y16 5655V89 5725B69 5655W88 5725C52 5655W90 5655Y31
+  Copyright IBM Corp. 1987, 2015 All Rights Reserved
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+
+-->
+
+<project default="usage" basedir="..">
+  <property name="executionserver.home" location="${basedir}"/>
+
+  <import file="${executionserver.home}/lib/classpath-executionserver.xml"/>
+	<taskdef resource="res-tasks.properties" >
+    <classpath refid="executionserver.setup.classpath" />
+  </taskdef>
+
+  <target name="setup">
+    <property name="xu.in" value=""/>
+    <property name="xu.out" value=""/>
+    <property name="xu.config.in" value=""/>
+    <property name="xu.config.out" value=""/>
+    <property name="console.war.in" value=""/>
+    <property name="console.war.out" value=""/>
+    <property name="console.ear.in" value=""/>
+    <property name="console.ear.out" value=""/>
+    <property name="persistence.type" value=""/>
+    <property name="persistence.jdbc.user" value=""/>
+    <property name="persistence.jdbc.password" value=""/>
+    <property name="persistence.jdbc.crypted.password.enabled" value=""/>
+    <property name="persistence.jdbc.driver" value=""/>
+    <property name="persistence.jdbc.url" value=""/>
+    <property name="persistence.datasource.jndi" value=""/>
+    <property name="persistence.file.directory" value=""/>
+    <property name="xom.persistence.type" value=""/>
+    <property name="xom.persistence.jdbc.user" value=""/>
+    <property name="xom.persistence.jdbc.password" value=""/>
+    <property name="xom.persistence.jdbc.crypted.password.enabled" value=""/>
+    <property name="xom.persistence.jdbc.driver" value=""/>
+    <property name="xom.persistence.jdbc.url" value=""/>
+    <property name="xom.persistence.datasource.jndi" value=""/>
+    <property name="xom.persistence.file.directory" value=""/>
+    <property name="xom.persistence.lazyload" value=""/>
+    <property name="eventplugin.secured" value=""/>
+    <property name="eventplugin.username" value=""/>
+    <property name="eventplugin.password" value=""/>
+    <property name="eventplugin.jmstarget.type" value=""/>
+    <property name="eventplugin.jmstarget.connectionfactory.name" value=""/>
+    <property name="eventplugin.jmstarget.name" value=""/>
+    <property name="management.protocol" value=""/>
+    <property name="management.tcpip.port" value=""/>
+    <property name="management.tcpip.timeout" value=""/>
+    <property name="compiledArchivesCache.properties" value=""/>
+    <!-- internal usage only -->
+    <property name="persistence.file.rulesetarchiveexpanded" value=""/>
+    <!-- internal usage only -->
+    <property name="connectionmanager.properties" value=""/>
+    <property name="session.mode" value=""/>
+
+    <res-setup xuInput="${xu.in}"
+               xuOutput="${xu.out}"
+               xuConfigInput = "${xu.config.in}"
+               xuConfigOutput = "${xu.config.out}"
+               consoleEARInput="${console.ear.in}"
+               consoleEAROutput="${console.ear.out}"
+               consoleWARInput="${console.war.in}"
+               consoleWAROutput="${console.war.out}">
+       <property name="persistence.type" value="${persistence.type}" />
+       <property name="persistence.jdbc.user" value="${persistence.jdbc.user}" />
+       <property name="persistence.jdbc.crypted.password.enabled" value="${persistence.jdbc.crypted.password.enabled}" />
+       <property name="persistence.jdbc.password" value="${persistence.jdbc.password}" />
+       <property name="persistence.jdbc.driver" value="${persistence.jdbc.driver}" />
+       <property name="persistence.jdbc.url" value="${persistence.jdbc.url}" />
+       <property name="persistence.datasource.jndi" value="${persistence.datasource.jndi}" />
+       <property name="persistence.file.directory" value="${persistence.file.directory}" />
+       <property name="persistence.file.rulesetarchiveexpanded" value="${persistence.file.rulesetarchiveexpanded}"/>
+       <property name="xom.persistence.type" value="${xom.persistence.type}" />
+       <property name="xom.persistence.jdbc.user" value="${xom.persistence.jdbc.user}" />
+       <property name="xom.persistence.jdbc.crypted.password.enabled" value="${xom.persistence.jdbc.crypted.password.enabled}" />
+       <property name="xom.persistence.jdbc.password" value="${xom.persistence.jdbc.password}" />
+       <property name="xom.persistence.jdbc.driver" value="${xom.persistence.jdbc.driver}" />
+       <property name="xom.persistence.jdbc.url" value="${xom.persistence.jdbc.url}" />
+       <property name="xom.persistence.datasource.jndi" value="${xom.persistence.datasource.jndi}" />
+       <property name="xom.persistence.file.directory" value="${xom.persistence.file.directory}" />
+       <property name="xom.persistence.lazyload" value="${xom.persistence.lazyload}" />
+       <property name="connectionmanager.properties" value="${connectionmanager.properties}"/>
+       <property name="session.mode" value="${session.mode}"/>
+       <property name="management.protocol" value="${management.protocol}"/>
+       <property name="management.tcpip.port" value="${management.tcpip.port}"/>
+       <property name="management.tcpip.timeout" value="${management.tcpip.timeout}"/>
+       <property name="eventplugin.secured" value="${eventplugin.secured}"/>
+       <property name="eventplugin.username" value="${eventplugin.username}"/>
+       <property name="eventplugin.password" value="${eventplugin.password}"/>
+       <property name="eventplugin.jmstarget.type" value="${eventplugin.jmstarget.type}"/>
+       <property name="eventplugin.jmstarget.connectionfactory.name" value="${eventplugin.jmstarget.connectionfactory.name}"/>
+       <property name="eventplugin.jmstarget.name" value="${eventplugin.jmstarget.name}"/>
+       <property name="compiledArchivesCache.properties" value="${compiledArchivesCache.properties}"/>
+    </res-setup>
+
+  </target>
+
+
+  <target name="usage">
+    <echo>Rules Execution Server setup tool.
+
+    Ant tasks:
+       - usage
+       - setup : Creates a new RES Console and/or Execution Unit.
+
+    Ant Properties:
+       - xu.in : path to input XU .rar
+       - xu.out : path to output XU .rar
+       - xu.config.in : path to input XU ra.xml
+       - xu.config.out : path to output XU ra.xml
+       - compiledArchivesCache.properties : max. number of compiled archives in the cache, and path to the XUs compiled archives cache
+       - console.ear.in : path to input management .ear
+       - console.ear.out : path to output management .ear
+       - console.war.in: path to input RES Console .war
+       - console.war.out: path to output RES Console .war
+
+       - persistence.type : file | datasource | jdbc
+       - persistence.file.directory : Where the path to the top directory containing rulesets is.
+       - persistence.jdbc.user : Login to use with the database connection.
+       - persistence.jdbc.password : A password to use with the database connection.
+       - persistence.jdbc.crypted.password.enabled : Password will be crypted in the XU configuration file
+       - persistence.jdbc.url :  The JDBC URL to establish a connection with the database.
+       - persistence.jdbc.driver : A driver implementation class to establish a connection with the database.
+       - persistence.datasource.jndi : The JNDI name of the datasource.
+
+       - xom.persistence.type : file | datasource | jdbc
+       - xom.persistence.file.directory : Where the path to the top directory containing rulesets is.
+       - xom.persistence.jdbc.user : Login to use with the database connection.
+       - xom.persistence.jdbc.password : A password to use with the database connection.
+       - xom.persistence.jdbc.crypted.password.enabled : Password will be crypted in the XU configuration file
+       - xom.persistence.jdbc.url :  The JDBC URL to establish a connection with the database.
+       - xom.persistence.jdbc.driver : A driver implementation class to establish a connection with the database.
+       - xom.persistence.datasource.jndi : The JNDI name of the datasource.
+       - xom.persistence.lazyload : The lazy loading capabilities activation of the Managed XOM.
+
+       - management.protocol: jmx | tcpip. If no value is provided, jmx is assumed.
+       - management.protocol.tcpip.port: if management protocol is tcpip, the port number on which the management server is running. If no value is provided, 1883 is assumed.
+       - management.protocol.tcpip.timeout: the timeout (in second) to wait for managed XU responses when using the tcpip management protocol.
+
+       - eventplugin.secured : true | false
+       - eventplugin.username : Login to use for event JMS connection.
+       - eventplugin.password : A password to use for event JMS connection.
+       - eventplugin.jmstarget.type : Topic | Queue
+       - eventplugin.jmstarget.connectionfactory.name : The connection factory name to use for event JMS connection.
+       - eventplugin.jmstarget.name : The name to use for event JMS connection.
+
+    Example:
+       ant -Dxu.in=../applicationservers/WebSphere85/jrules-res-xu-WAS85.rar -Dxu.out=myxu.rar -Dconsole.ear.in=../applicationservers/WebSphere85/jrules-res-management-WAS85.ear -Dconsole.ear.out=mymanagement.ear -Dpersistence.type=file -f ressetup.xml setup
+       (Creates a new XU .rar and management .ear using file persistence)</echo>
+  </target>
+</project>
