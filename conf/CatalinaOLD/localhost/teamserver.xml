@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Context docBase="C:\IBM\ODM851\teamserver\applicationservers\tomcat7\teamserver-web-TOMCAT7-8.5.1-20160706.191237-905.war" reloadable="true">
+ <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container"
+              defaultTransactionIsolation="READ_COMMITTED"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
+        username="ILOG" password="ILOG"
+        driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
+        url="jdbc:derby:../data/rtsdb851_bis;create=true"  />
+
+</Context>
