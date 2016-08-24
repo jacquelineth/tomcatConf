@@ -120,13 +120,22 @@
       -->
 
       <!-- Use the LockOutRealm to prevent attempts to guess user passwords
-           via a brute-force attack -->
+           via a brute-force attack 
+           TJ_Added http://tomcat.apache.org/tomcat-7.0-doc/config/realm.html  -->
       <Realm className="org.apache.catalina.realm.LockOutRealm">
         <!-- This Realm uses the UserDatabase configured in the global JNDI
              resources under the key "UserDatabase".  Any edits
              that are performed against this UserDatabase are immediately
              available for use by the Realm.  -->
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+        <Realm   className="org.apache.catalina.realm.JNDIRealm"
+            connectionURL="ldap://localhost:10389"
+            userPattern="uid={0},ou=users,dc=loanserviceco,dc=com"
+            roleBase="ou=groups,dc=loanserviceco,dc=com"
+            roleName="cn"
+            roleSearch="(member={0})"
+            commonRole="rtsUser"
+           />
       </Realm>
 
       <Host name="localhost"  appBase="webapps88" unpackWARs="true" autoDeploy="true" deployOnStartup="true">
