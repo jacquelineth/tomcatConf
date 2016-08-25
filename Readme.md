@@ -52,7 +52,12 @@ Then in your DecisionService or any XU you must update the ra.xml's plugin defin
     {pluginClass=Management,xuName=default,protocol=tcpip,tcpip.port=1883,tcpip.host=localhost,tcpip.retryInterval=2000}
 
 
+### LDAP 
+Branch ODM88_LDAP contains a modified conf/server.xml, with 2 realms, default file-based and LDAP with `commonRole` to set a rtsUser role to any authenticated.
 
+
+
+### Configured Database
 The configured DB is embedded Derby stored in /data, other JDBC jars should be added in /lib.
 There is also a setup to use Derby Network server with startDeby.bat/stopDerby.bat, adjust the datasource definition accordingly.
 
