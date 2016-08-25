@@ -29,22 +29,25 @@
 
 
 
-Two approaches, zeroconf or permanent. Although created for ODM88 branch, just changing `ODM_HOME` is sufficient.
+### TCP/IP Mode
 
+Two approaches, zeroconf or permanent. Although created for ODM88 branch, just changing `ODM_HOME` is sufficient.
 #### zeroconf
 By default conf/Catalina/localhost/res.xml, will overwrite the `management.protocol` to **tcpip**
 #### Permanent
-
-
-### TCP/IP Mode
 A new folder ***tcpIP*** provides a batch file (**configTcpip.bat**) to generate the new res.war file which will be deployed in *webapps88*. Set the ODM Home, and modify the default tcip property if required
 Then in your DecisionService or any XU you must update the ra.xml's plugin definition with 
 
     {pluginClass=Management,xuName=default,protocol=tcpip,tcpip.port=1883,tcpip.host=localhost,tcpip.retryInterval=2000}
 
 
+### LDAP 
+Branch ODM88_LDAP contains a modified conf/server.xml, with 2 realms, default file-based and LDAP with `commonRole` to set a rtsUser role to any authenticated.
 
-The configured DB is embedded Derby stored in /data, other JDBC jars should be added in /lib.
+
+
+### Configured Database
+The configured DB is 'embedded Derby' stored in /data, other JDBC jars should be added in /lib (like h2).
 There is also a setup to use Derby Network server with startDeby.bat/stopDerby.bat, adjust the datasource definition accordingly.
 
 
