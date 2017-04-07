@@ -42,5 +42,64 @@ web.xml too for that, though **** -->
     <!--
     <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
     -->
+      <!--<Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
+       username="resdbAdmin" password="resdbAdmin" 
+       driverClassName="org.apache.derby.jdbc.EmbeddedDriver" url="jdbc:derby:../data/resDb88;create=true" />-->
+      <!--<Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
+     jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
+     username="resdbAdmin" password="resdbAdmin" 
+     driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
+     url="jdbc:derby:../data/resDb88;create=true;traceFile=trace.out;traceLevel=2;traceDirectory=../logs" />-->
+ 	   <Resource auth="Container" 
+      defaultTransactionIsolation="READ_COMMITTED"
+      driverClassName="org.h2.Driver" 
+      name="jdbc/resdatasource" 
+      username="tomcat" password="tomcat" 
+      type="javax.sql.DataSource" 
+      url="jdbc:h2:file:${catalina.base}/data/h2resdb;create=true;LOCK_TIMEOUT=20000"      /> 
+       	<Resource auth="Container" 
+      defaultTransactionIsolation="READ_COMMITTED"
+      driverClassName="org.h2.Driver" 
+      name="jdbc/ilogDataSource" 
+      username="tomcat" password="tomcat" 
+      type="javax.sql.DataSource" 
+      url="jdbc:h2:file:C:/Cases/Florian/PMR51121/rtsdb" /> 
+
+      <!--<Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
+     jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
+     username="resdbAdmin" password="resdbAdmin" 
+     driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
+     url="jdbc:derby:../data/resDb88;create=true;traceFile=trace.out;traceLevel=TRACE_STATEMENT_CALLS;traceDirectory=../logs" />-->
+
+
+
+     <!--<Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container"
+     jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=10)"
+     username="ILOG" password="" 
+     driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
+     url="jdbc:derby:C:/Cases/Florian/PMR51121/rtsdb;create=true;traceFile=trace.out;traceLevel=2;traceDirectory=../logs" /> -->
+<!--https://docs.oracle.com/javadb/10.8.3.0/ref/rrefattribtracelevel.html#rrefattribtracelevel-->
+      <!--<Resource auth="Container" 
+			  defaultTransactionIsolation="READ_COMMITTED"
+			  driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
+			  name="jdbc/ilogDataSource" 
+			  username="sa" password="" 
+			  type="javax.sql.DataSource" 
+			  url="jdbc:derby:C:/Cases/JRules/tomcat88/data/rtsdb88;create=true" /> -->
+
+      <Resource auth="Container" 
+			  defaultTransactionIsolation="READ_COMMITTED"
+			  driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
+			  name="jdbc/PMR52300" 
+			  username="ILOG" password="" 
+			  type="javax.sql.DataSource" 
+			  url="jdbc:derby:C:/Cases/JRules/DC88/PMR52300/rtsdb;create=true" /> 
+      <!--<Resource auth="Container" 
+			  defaultTransactionIsolation="READ_COMMITTED"
+			  driverClassName="org.postgresql.Driver" 
+			  name="jdbc/ilogDataSource" 
+        username="rtsuser" password="" 
+        type="javax.sql.DataSource" 
+        url="jdbc:postgresql://localhost:5439/public" /> -->
 
 </Context>

@@ -128,17 +128,17 @@
              that are performed against this UserDatabase are immediately
              available for use by the Realm.  -->
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
-        <Realm   className="org.apache.catalina.realm.JNDIRealm"
+        <!--<Realm   className="org.apache.catalina.realm.JNDIRealm"
             connectionURL="ldap://localhost:10389"
             userPattern="uid={0},ou=users,dc=loanserviceco,dc=com"
             roleBase="ou=groups,dc=loanserviceco,dc=com"
             roleName="cn"
             roleSearch="(member={0})"
             commonRole="rtsUser"
-           />
+           />-->
       </Realm>
 
-      <Host name="localhost"  appBase="webapps88" unpackWARs="true" autoDeploy="true" deployOnStartup="true">
+      <Host name="localhost"  appBase="webapps88" unpackWARs="true" autoDeploy="true" deployOnStartup="false">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->

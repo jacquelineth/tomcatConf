@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<Context  docBase="${executionserver.home.tomcat}/DecisionService.war" reloadable="true" crossContext="true">
+<Context  docBase="${executionserver.home.tomcat}/testing.war" reloadable="true" crossContext="true">
   <ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource" type="javax.sql.DataSource"/>
 </Context>
