@@ -1,12 +1,5 @@
 <Context  docBase="${teamserver.home.tomcat}/decisioncenter.war" reloadable="true" crossContext="true">
-     <!--<Resource auth="Container" 
-      defaultTransactionIsolation="READ_COMMITTED"
-      driverClassName="org.postgresql.Driver" 
-      name="jdbc/ilogDataSource" 
-      username="rtsuser" password="rtsuser" 
-      type="javax.sql.DataSource" 
-      url="jdbc:postgresql://192.168.1.21:5432/public" />    -->
-    <!--<ResourceLink name="jdbc/ilogDataSource" global="jdbc/ilogDataSource" type="javax.sql.DataSource"/>-->
-    <!--<ResourceLink name="jdbc/ilogLecomte" global="jdbc/ilogLecomte" type="javax.sql.DataSource"/>-->
-    <ResourceLink name="jdbc/PMR52300" global="jdbc/52300" type="javax.sql.DataSource"/>
+
+    <ResourceLink name="jdbc/ilogDataSource" global="jdbc/ilogDataSource" type="javax.sql.DataSource"/>
+
 </Context>

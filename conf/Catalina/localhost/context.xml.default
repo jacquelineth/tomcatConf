@@ -56,14 +56,14 @@ web.xml too for that, though **** -->
       name="jdbc/resdatasource" 
       username="tomcat" password="tomcat" 
       type="javax.sql.DataSource" 
-      url="jdbc:h2:file:${catalina.base}/data/h2resdb;create=true;LOCK_TIMEOUT=20000"      /> 
+      url="jdbc:h2:file:${catalina.base}/data/h2resdb89;create=true;LOCK_TIMEOUT=20000"      /> 
        	<Resource auth="Container" 
       defaultTransactionIsolation="READ_COMMITTED"
       driverClassName="org.h2.Driver" 
       name="jdbc/ilogDataSource" 
       username="tomcat" password="tomcat" 
       type="javax.sql.DataSource" 
-      url="jdbc:h2:file:C:/Cases/Florian/PMR51121/rtsdb" /> 
+      url="jdbc:h2:file:${catalina.base}/data/h2rtsdb89;create=true;LOCK_TIMEOUT=20000" /> 
 
       <!--<Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
      jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
@@ -87,13 +87,7 @@ web.xml too for that, though **** -->
 			  type="javax.sql.DataSource" 
 			  url="jdbc:derby:C:/Cases/JRules/tomcat88/data/rtsdb88;create=true" /> -->
 
-      <Resource auth="Container" 
-			  defaultTransactionIsolation="READ_COMMITTED"
-			  driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
-			  name="jdbc/PMR52300" 
-			  username="ILOG" password="" 
-			  type="javax.sql.DataSource" 
-			  url="jdbc:derby:C:/Cases/JRules/DC88/PMR52300/rtsdb;create=true" /> 
+
       <!--<Resource auth="Container" 
 			  defaultTransactionIsolation="READ_COMMITTED"
 			  driverClassName="org.postgresql.Driver" 
