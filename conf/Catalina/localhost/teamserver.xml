@@ -1,33 +1,4 @@
 <Context  docBase="${teamserver.home.tomcat}/teamserver.war" reloadable="true" crossContext="true">
-     <!--<Resource auth="Container" 
-      defaultTransactionIsolation="READ_COMMITTED"
-      driverClassName="org.postgresql.Driver" 
-      name="jdbc/ilogDataSource96" 
-      username="rtsuser" password="" 
-      type="javax.sql.DataSource" 
-      url="jdbc:postgresql://localhost:5439/public" />    -->
-      <!--<Resource auth="Container" 
-			  defaultTransactionIsolation="READ_COMMITTED"
-			  driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
-			  name="jdbc/ilogDataSourcelocal" 
-			  username="sa" password="" 
-			  type="javax.sql.DataSource" 
-			  url="jdbc:derby:C:/Cases/JRules/tomcat88/data/rtsdb88;create=true" /> -->
-        <!--<Resource auth="Container" 
-      defaultTransactionIsolation="READ_COMMITTED"
-      driverClassName="org.postgresql.Driver" 
-      name="jdbc/ilogDataSource" 
-      username="rtsuser" password="" 
-      type="javax.sql.DataSource" 
-      url="jdbc:postgresql://localhost:5432/public" />   -->
-      <!--<Resource auth="Container" 
-      defaultTransactionIsolation="READ_COMMITTED"
-      driverClassName="org.postgresql.Driver" 
-      name="jdbc/ilogDataSource" 
-      username="rtsuser" password="" 
-      type="javax.sql.DataSource" 
-      url="jdbc:postgresql://localhost:5432/postgres" />   -->
-       <!--<ResourceLink name="jdbc/ilogLecomte" global="jdbc/ilogLecomte" type="javax.sql.DataSource"/>-->
-        <!--<ResourceLink name="jdbc/PMR52300" global="jdbc/PMR52300" type="javax.sql.DataSource"/>-->
+  
       <ResourceLink name="jdbc/ilogDataSource" global="jdbc/ilogDataSource" type="javax.sql.DataSource"/>
 </Context>
