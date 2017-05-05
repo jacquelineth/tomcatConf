@@ -57,13 +57,13 @@ web.xml too for that, though **** -->
       username="tomcat" password="tomcat" 
       type="javax.sql.DataSource" 
       url="jdbc:h2:file:${catalina.base}/data/h2resdb89;create=true;LOCK_TIMEOUT=20000"      /> 
-       	<Resource auth="Container" 
+       	<!--<Resource auth="Container" 
       defaultTransactionIsolation="READ_COMMITTED"
       driverClassName="org.h2.Driver" 
       name="jdbc/ilogDataSource" 
       username="tomcat" password="tomcat" 
       type="javax.sql.DataSource" 
-      url="jdbc:h2:file:${catalina.base}/data/h2rtsdb89;create=true;LOCK_TIMEOUT=20000" /> 
+      url="jdbc:h2:file:${catalina.base}/data/h2rtsdb89;create=true;LOCK_TIMEOUT=20000" /> -->
 
       <!--<Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
      jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
@@ -86,7 +86,14 @@ web.xml too for that, though **** -->
 			  username="sa" password="" 
 			  type="javax.sql.DataSource" 
 			  url="jdbc:derby:C:/Cases/JRules/tomcat88/data/rtsdb88;create=true" /> -->
-
+    <Resource auth="Container" 
+			  defaultTransactionIsolation="READ_COMMITTED"
+			  driverClassName="org.apache.derby.jdbc.ClientDriver" 
+        jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=500)"
+			  name="jdbc/ilogDataSource" 
+			  username="Tomcat" password="Tomcat" 
+			  type="javax.sql.DataSource" 
+			  url="jdbc:derby://localhost:1527/rtsDb89;create=true;traceFile=trace.out;traceLevel=2;traceDirectory=../logs" />
 
       <!--<Resource auth="Container" 
 			  defaultTransactionIsolation="READ_COMMITTED"
