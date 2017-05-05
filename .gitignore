@@ -15,3 +15,5 @@ data/
 **/*.bak
 webappDefault/**
 webapps88/*/**
+webapps89/*/**
+lib/derbyLocale_*.jar
