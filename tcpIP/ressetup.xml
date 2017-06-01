@@ -3,21 +3,21 @@
 
   Licensed Materials - Property of IBM
   5724X98 5724Y15 5655V82 5724X99 5724Y16 5655V89 5725B69 5655W88 5725C52 5655W90 5655Y31
-  Copyright IBM Corp. 1987, 2015 All Rights Reserved
+  Copyright IBM Corp. 1987, 2017 All Rights Reserved
   US Government Users Restricted Rights - Use, duplication or
   disclosure restricted by GSA ADP Schedule Contract with
   IBM Corp.
 
 -->
 
-<project default="usage" basedir="..">
+<project default="usage" basedir="c:/ibm/odm89/executionserver">
   <property name="executionserver.home" location="${basedir}"/>
 
   <import file="${executionserver.home}/lib/classpath-executionserver.xml"/>
 	<taskdef resource="res-tasks.properties" >
     <classpath refid="executionserver.setup.classpath" />
   </taskdef>
-
+ 
   <target name="setup">
     <property name="xu.in" value=""/>
     <property name="xu.out" value=""/>
@@ -44,16 +44,11 @@
     <property name="xom.persistence.datasource.jndi" value=""/>
     <property name="xom.persistence.file.directory" value=""/>
     <property name="xom.persistence.lazyload" value=""/>
-    <property name="eventplugin.secured" value=""/>
-    <property name="eventplugin.username" value=""/>
-    <property name="eventplugin.password" value=""/>
-    <property name="eventplugin.jmstarget.type" value=""/>
-    <property name="eventplugin.jmstarget.connectionfactory.name" value=""/>
-    <property name="eventplugin.jmstarget.name" value=""/>
     <property name="management.protocol" value=""/>
     <property name="management.tcpip.port" value=""/>
     <property name="management.tcpip.timeout" value=""/>
     <property name="compiledArchivesCache.properties" value=""/>
+    <property name="xu.plugins" value=""/>
     <!-- internal usage only -->
     <property name="persistence.file.rulesetarchiveexpanded" value=""/>
     <!-- internal usage only -->
@@ -91,24 +86,59 @@
        <property name="management.protocol" value="${management.protocol}"/>
        <property name="management.tcpip.port" value="${management.tcpip.port}"/>
        <property name="management.tcpip.timeout" value="${management.tcpip.timeout}"/>
-       <property name="eventplugin.secured" value="${eventplugin.secured}"/>
-       <property name="eventplugin.username" value="${eventplugin.username}"/>
-       <property name="eventplugin.password" value="${eventplugin.password}"/>
-       <property name="eventplugin.jmstarget.type" value="${eventplugin.jmstarget.type}"/>
-       <property name="eventplugin.jmstarget.connectionfactory.name" value="${eventplugin.jmstarget.connectionfactory.name}"/>
-       <property name="eventplugin.jmstarget.name" value="${eventplugin.jmstarget.name}"/>
        <property name="compiledArchivesCache.properties" value="${compiledArchivesCache.properties}"/>
+       <property name="plugins" value="${xu.plugins}"/>
     </res-setup>
 
   </target>
 
-
+ 
+ <target name="setup-metering">
+        <property name="xu.config.in" value=""/>
+        <property name="xu.config.out" value=""/>
+        <property name="xu.in" value=""/>
+        <property name="xu.out" value=""/>
+        <property name="metering.war.in" value=""/>
+        <property name="metering.war.out" value=""/>
+        <property name="metering.enable" value="true"/>
+        <property name="metering.send.usages" value="true"/>
+        <property name="metering.server.url" value="https://hybridconnect-api.ng.bluemix.net"/>
+        <property name="metering.api.key" value=""/>
+        <property name="metering.instance.identifier" value=""/>
+        <property name="metering.host.name" value=""/>
+        <property name="metering.install.directory" value=""/>
+        <property name="metering.environment.type" value=""/>
+        <property name="metering.source.url" value=""/>
+        <property name="metering.log.usages" value=""/>
+        <combinaison-check prop1="xu.config.in" prop2="xu.config.out"/>
+        <combinaison-check prop1="xu.in" prop2="xu.out"/>
+        <combinaison-check prop1="metering.war.in" prop2="metering.war.out"/>
+        <res-setup 
+                   xuInput="${xu.in}"
+                   xuOutput="${xu.out}"
+                   xuConfigInput = "${xu.config.in}"
+                   xuConfigOutput = "${xu.config.out}"
+                   meteringWARInput="${metering.war.in}"
+                   meteringWARoutput="${metering.war.out}">
+            <property name="metering.enable" value="${metering.enable}"/>
+            <property name="metering.send.usages" value="${metering.send.usages}"/>
+            <property name="metering.server.url" value="${metering.server.url}"/>
+            <property name="metering.api.key" value="${metering.api.key}"/>
+            <property name="metering.instance.identifier" value="${metering.instance.identifier}"/>
+            <property name="metering.host.name" value="${metering.host.name}"/>
+            <property name="metering.install.directory" value="${metering.install.directory}"/>
+            <property name="metering.environment.type" value="${metering.environment.type}"/>
+            <property name="metering.source.url" value="${metering.source.url}"/>
+            <property name="metering.log.usages" value="${metering.log.usages}"/>
+        </res-setup>
+ </target>
   <target name="usage">
     <echo>Rules Execution Server setup tool.
 
     Ant tasks:
        - usage
        - setup : Creates a new RES Console and/or Execution Unit.
+       - setup-metering: Enable/Disable metering feature in the Execution Unit.
 
     Ant Properties:
        - xu.in : path to input XU .rar
@@ -140,19 +170,58 @@
        - xom.persistence.datasource.jndi : The JNDI name of the datasource.
        - xom.persistence.lazyload : The lazy loading capabilities activation of the Managed XOM.
 
-       - management.protocol: jmx | tcpip. If no value is provided, jmx is assumed.
+       - management.protocol: jmx | tcpip. If no value is provided, jmx is assumed. 
        - management.protocol.tcpip.port: if management protocol is tcpip, the port number on which the management server is running. If no value is provided, 1883 is assumed.
        - management.protocol.tcpip.timeout: the timeout (in second) to wait for managed XU responses when using the tcpip management protocol.
 
-       - eventplugin.secured : true | false
-       - eventplugin.username : Login to use for event JMS connection.
-       - eventplugin.password : A password to use for event JMS connection.
-       - eventplugin.jmstarget.type : Topic | Queue
-       - eventplugin.jmstarget.connectionfactory.name : The connection factory name to use for event JMS connection.
-       - eventplugin.jmstarget.name : The name to use for event JMS connection.
+       - metering.enable: true | false. Enable or disable metering.
+       - metering.send.usages: true | false. Enable or disable the send of the usage.
+       - metering.server.url: Valid URL. Mandatory Value. Server URL of the usage server.
+       - metering.api.key: Valid API Key. Mandatory Value. API Key generated from Bluemix.
+       - metering.instance.identifier: String. Optional. Identifier of your instance.
+       - metering.host.name: String. Optional. Host name that send the metering.
+       - metering.install.directory:  String. Optional. Directory of the emitter of this request.
+       - metering.environment.type: String. Information about the environment from where you send the metering.
+       - metering.source.url: Valid URL. Server Source that emit the metrics values.
 
+	   
     Example:
        ant -Dxu.in=../applicationservers/WebSphere85/jrules-res-xu-WAS85.rar -Dxu.out=myxu.rar -Dconsole.ear.in=../applicationservers/WebSphere85/jrules-res-management-WAS85.ear -Dconsole.ear.out=mymanagement.ear -Dpersistence.type=file -f ressetup.xml setup
-       (Creates a new XU .rar and management .ear using file persistence)</echo>
+       (Creates a new XU .rar and management .ear using file persistence)
+
+       For metering:
+          ant -f ressetup.xml -Dxu.config.in=ra.xml -Dxu.config.out=ra-out.xml -Dmetering.api.key=myapi setup-metering
+          (Creates a new ra-out.xml with metering enabled)
+
+
+
+     </echo>
   </target>
+  <macrodef name="check-property-value">
+    <attribute name="prop1"/>
+    <attribute name="prop2"/>
+    <sequential>
+       <fail message="Use of parameter @{prop2} required to set parameter @{prop1}.">
+          <condition>
+            <and>
+              <equals arg1="${@{prop1}}" arg2=""/>
+              <not>
+                <equals arg1="${@{prop2}}" arg2=""/>
+              </not>
+            </and>
+          </condition>
+        </fail> 
+    </sequential>
+  </macrodef>
+
+ <macrodef name="combinaison-check">
+    <attribute name="prop1"/>
+    <attribute name="prop2"/>
+    <sequential>
+      <check-property-value prop1="@{prop1}" prop2="@{prop2}"/>
+      <check-property-value prop1="@{prop2}" prop2="@{prop1}"/>
+    </sequential>
+  </macrodef>
+
+
 </project>

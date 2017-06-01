@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Context  docBase="DecisionService" reloadable="true" crossContext="true">
+    <ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource" type="javax.sql.DataSource"/>
+    <Parameter name="XuDumpSchedulerEnabled" value="true" override="false" />
+</Context>

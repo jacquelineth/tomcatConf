@@ -2,7 +2,7 @@
 
   Licensed Materials - Property of IBM
   5724X98 5724Y15 5655V82 5724X99 5724Y16 5655V89 5725B69 5655W88 5725C52 5655W90 5655Y31
-  Copyright IBM Corp. 1987, 2015 All Rights Reserved
+  Copyright IBM Corp. 1987, 2017 All Rights Reserved
   US Government Users Restricted Rights - Use, duplication or
   disclosure restricted by GSA ADP Schedule Contract with
   IBM Corp.
@@ -37,13 +37,13 @@
 
         <vendor-name>IBM</vendor-name>
         <eis-type>XU</eis-type>
-        <resourceadapter-version>Decision Server 8.8.0.0</resourceadapter-version>
+        <resourceadapter-version>Decision Server 8.9.0.0</resourceadapter-version>
 
         <license>
 
                 <description>
                         Licensed Materials - Property of IBM (c) Copyright
-                        IBM Corp. 1987, 2015 All Rights Reserved US Government Users
+                        IBM Corp. 1987, 2017 All Rights Reserved US Government Users
                         Restricted Rights - Use, duplication or disclosure restricted by
                         GSA ADP Schedule Contract with IBM Corp.
                 </description>
@@ -64,82 +64,82 @@
                                 <!-- Do NOT change the value of this parameter. Changing the value of this parameter
                                      could produce unpredictable results. -->
                                 <config-property>
-<config-property-name>duplicateConnectionEventListenerEnabled</config-property-name>
-<config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>true</config-property-value>
-</config-property>
+                                  <config-property-name>DuplicateConnectionEventListenerEnabled</config-property-name>
+                                  <config-property-type>java.lang.Boolean</config-property-type>
+                                  <config-property-value>true</config-property-value>
+                                </config-property>
 
 
                                 <!-- Do NOT change the value of this parameter. Changing the value of this parameter
                                      could produce unpredictable results. -->
                                 <config-property>
-<config-property-name>xuDumpSchedulerEnabled</config-property-name>
-<config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>false</config-property-value>
-</config-property>
+                                  <config-property-name>XuDumpSchedulerEnabled</config-property-name>
+                                  <config-property-type>java.lang.Boolean</config-property-type>
+                                  <config-property-value>false</config-property-value>
+                                </config-property>
 
 
                                 <!-- Do NOT change the value of this parameter. Changing the value of this parameter
                                      could produce unpredictable results. -->
                                 <config-property>
-<config-property-name>xuDumpSchedulerInterval</config-property-name>
-<config-property-type>java.lang.Long</config-property-type>
-<config-property-value>10000</config-property-value>
-</config-property>
+                                  <config-property-name>XuDumpSchedulerInterval</config-property-name>
+                                  <config-property-type>java.lang.Long</config-property-type>
+                                  <config-property-value>10000</config-property-value>
+                                </config-property>
 
                                 <!-- Do NOT change the value of this parameter. Changing the value of this parameter
                                      could produce unpredictable results. -->
                                 <config-property>
-<config-property-name>concurrentOpenClose</config-property-name>
-<config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>true</config-property-value>
-</config-property>
+                                  <config-property-name>ConcurrentOpenClose</config-property-name>
+                                  <config-property-type>java.lang.Boolean</config-property-type>
+                                  <config-property-value>true</config-property-value>
+                                </config-property>
 
                                 <!-- Do NOT change the value of this parameter. Changing the value of this parameter
                                      could produce unpredictable results. -->
                                 <config-property>
-<config-property-name>jdkLoggingEnabled</config-property-name>
-<config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>false</config-property-value>
-</config-property>
+                                  <config-property-name>JdkLoggingEnabled</config-property-name>
+                                  <config-property-type>java.lang.Boolean</config-property-type>
+                                  <config-property-value>false</config-property-value>
+                                </config-property>
 
                                 <!-- Do NOT change the value of this parameter. Changing the value of this parameter
                                      could produce unpredictable results. -->
                                 <config-property>
-<config-property-name>systemOutLoggingEnabled</config-property-name>
-<config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>false</config-property-value>
-</config-property>
+                                  <config-property-name>SystemOutLoggingEnabled</config-property-name>
+                                  <config-property-type>java.lang.Boolean</config-property-type>
+                                  <config-property-value>false</config-property-value>
+                                </config-property>
 
 
                                 <!-- Do NOT change the value of this parameter. Changing the value of this parameter
                                      could produce unpredictable results. -->
                                 <config-property>
-<config-property-name>rulesetFactoryProperties</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value/>
-</config-property>
+                                  <config-property-name>RulesetFactoryProperties</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value/>
+                                </config-property>
 
                                 <!-- To change the properties of the pool of DocumentBuilders -->
                                 <config-property>
-<config-property-name>documentBuilderPoolProperties</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value/>
-</config-property>
+                                  <config-property-name>DocumentBuilderPoolProperties</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value/>
+                                </config-property>
 
                                 <!-- To change the properties of the pool of Transformers -->
                                 <config-property>
-<config-property-name>transformerPoolProperties</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value/>
-</config-property>
+                                  <config-property-name>TransformerPoolProperties</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value/>
+                                </config-property>
 
                                 <!-- To change the properties of the ruleset cache -->
                                 <config-property>
-<config-property-name>rulesetCacheProperties</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value>ruleset.cache.maintenance.period=300</config-property-value>
-</config-property>
+                                  <config-property-name>RulesetCacheProperties</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value>ruleset.cache.maintenance.period=300</config-property-value>
+                                </config-property>
 
                                 <!--
                                   To change the properties of the compiled archives cache.
@@ -156,27 +156,27 @@
                                    directory. Each instance of the XU must use a different path.
                                 -->
                                 <config-property>
-<config-property-name>compiledArchivesCacheProperties</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value/>
-</config-property>
+                                  <config-property-name>CompiledArchivesCacheProperties</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value/>
+                                </config-property>
 
                                 <!-- To enable ruleset usage information -->
                                 <config-property>
-<config-property-name>rulesetUsageMonitorEnabled</config-property-name>
-<config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>true</config-property-value>
-</config-property>
+                                  <config-property-name>RulesetUsageMonitorEnabled</config-property-name>
+                                  <config-property-type>java.lang.Boolean</config-property-type>
+                                  <config-property-value>true</config-property-value>
+                                </config-property>
 
                                 <!--
                                     When the RES memory profiler estimates the memory size of an object, it
                                     includes instances of classes that start with these strings.
                                   -->
                                 <config-property>
-<config-property-name>memoryProfilerIncludedPackageNames</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value>com.ibm.rules.,java.,ilog.,org.objectweb.asm.,org.apache.bcel.,javax.xml.parsers.,javax.xml.namespace.,javax.xml.transform.</config-property-value>
-</config-property>
+                                  <config-property-name>MemoryProfilerIncludedPackageNames</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value>com.ibm.rules.,java.,ilog.,org.objectweb.asm.,org.apache.bcel.,javax.xml.parsers.,javax.xml.namespace.,javax.xml.transform.</config-property-value>
+                                </config-property>
 
                                 <!--
                                      For ruleset execution to continue during the parsing
@@ -188,10 +188,10 @@
                                      is true.
                                   -->
                                 <config-property>
-<config-property-name>asynchronousRulesetParsing</config-property-name>
-<config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>true</config-property-value>
-</config-property>
+                                  <config-property-name>AsynchronousRulesetParsing</config-property-name>
+                                  <config-property-type>java.lang.Boolean</config-property-type>
+                                  <config-property-value>true</config-property-value>
+                                </config-property>
 
                                 <!--
                                     To change the trace level of the XU, replace the default value of FINE (debug messages, errors, and warnings) with one of the
@@ -202,24 +202,24 @@
                                     * INFO: informational messages, errors, and warnings
                                   -->
                                 <config-property>
-<config-property-name>traceLevel</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value>FINE</config-property-value>
-</config-property>
+                                  <config-property-name>TraceLevel</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value>FINE</config-property-value>
+                                </config-property>
 
                                 <!-- To flush the log stream each time a message is written, change the value to true. -->
                                 <config-property>
-<config-property-name>traceAutoFlush</config-property-name>
-<config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>true</config-property-value>
-</config-property>
+                                  <config-property-name>TraceAutoFlush</config-property-name>
+                                  <config-property-type>java.lang.Boolean</config-property-type>
+                                  <config-property-value>true</config-property-value>
+                                </config-property>
 
                                 <!-- To disable profiling, change the value to false. -->
                                 <config-property>
-<config-property-name>profilingEnabled</config-property-name>
-<config-property-type>java.lang.Boolean</config-property-type>
-<config-property-value>true</config-property-value>
-</config-property>
+                                  <config-property-name>ProfilingEnabled</config-property-name>
+                                  <config-property-type>java.lang.Boolean</config-property-type>
+                                  <config-property-value>true</config-property-value>
+                                </config-property>
 
                                 <!--
                                   To change the properties of the persistence mode, replace the value with one of the following.
@@ -233,10 +233,10 @@
                                       <config-property-value>datasource</config-property-value>
                                 -->
                                 <config-property>
-<config-property-name>persistenceType</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value>file</config-property-value>
-</config-property>
+                                  <config-property-name>PersistenceType</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value>datasource</config-property-value>
+                                </config-property>
 
                                 <!--
                                   To change the properties of the persistence mode, replace the value with one of the following:
@@ -321,10 +321,11 @@
                                       </config-property-value>
                                 -->
                                 <config-property>
-<config-property-name>persistenceProperties</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value>DIRECTORY=res_data,XOM_PERSISTENCE_TYPE=file,XOM_PERSISTENCE_DIRECTORY=res_xom</config-property-value>
-</config-property>
+                                  <config-property-name>PersistenceProperties</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <!--<config-property-value>JNDI_NAME=java:/comp/env/jdbc/resdatasource,XOM_PERSISTENCE_TYPE=datasource,XOM_PERSISTENCE_JNDI_NAME=java:/comp/env/jdbc/resdatasource</config-property-value>-->
+                                  <config-property-value>JNDI_NAME=jdbc/resdatasource, XOM_PERSISTENCE_TYPE=datasource, XOM_PERSISTENCE_JNDI_NAME=jdbc/resdatasource</config-property-value>
+                                </config-property>
 
                                 <!--
                                   To modify the list of the XU event plug-ins, add each new plug-in to the plugins property.
@@ -363,10 +364,10 @@
 
                                 -->
                                 <config-property>
-<config-property-name>plugins</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value>{pluginClass=DVS},{pluginClass=Management,xuName=default,protocol=tcpip,tcpip.port=1883,tcpip.host=localhost,tcpip.retryInterval=2000}</config-property-value>
-</config-property>
+                                  <config-property-name>Plugins</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value>{pluginClass=DVS},{pluginClass=Management,xuName=xuHTDS,protocol=tcpip,tcpip.port=1883,tcpip.host=localhost,tcpip.retryInterval=2000}</config-property-value>
+                                </config-property>
 
                                 <!--
 
@@ -386,10 +387,10 @@
                                 * pool.class = name of the class implementing the pool (must implement the interface ilog.rules.res.xu.pool.IlrPool)
                                 -->
                                 <config-property>
-<config-property-name>defaultConnectionManagerProperties</config-property-name>
-<config-property-type>java.lang.String</config-property-type>
-<config-property-value>pool.maxSize=20,pool.waitTimeout=-1</config-property-value>
-</config-property>
+                                  <config-property-name>DefaultConnectionManagerProperties</config-property-name>
+                                  <config-property-type>java.lang.String</config-property-type>
+                                  <config-property-value>pool.maxSize=15,pool.waitTimeout=60</config-property-value>
+                                </config-property>
 
                                 <connectionfactory-interface>
                                         javax.resource.cci.ConnectionFactory
