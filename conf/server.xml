@@ -175,7 +175,7 @@
                resourceName="UserDatabase"/>
       </Realm>
 
-      <Host name="localhost"  appBase="webapps89_res"
+      <Host name="localhost"  appBase="webapps89_res.1s"
             unpackWARs="true" autoDeploy="true" deployOnStartup="true" >
 
         <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster" channelSendOptions="8">

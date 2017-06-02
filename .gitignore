@@ -17,6 +17,6 @@ webappDefault/**
 webapps88/*/**
 webapps89/*/**
 webapps89/*
-webapps89_res/*
-webapps89_res/*/**
+webapps89_res*/*
+webapps89_res*/*/**
 lib/derbyLocale_*.jar
