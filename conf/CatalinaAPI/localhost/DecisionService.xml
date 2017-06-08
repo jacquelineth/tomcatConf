@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<Context  docBase="DecisionService.war" reloadable="true" crossContext="true" renewThreadsWhenStoppingContext="true">
+<Context  docBase="DecisionService.war" reloadable="false" crossContext="true" renewThreadsWhenStoppingContext="true">
     <ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource" type="javax.sql.DataSource"/>
 </Context>
