@@ -17,6 +17,6 @@ webappDefault/**
 webapps88/*/**
 webapps88b/**
 webapps89/**
-
+SolrDataDir/**
 lib/derbyLocale_??*.jar
 webapps89_res*/**

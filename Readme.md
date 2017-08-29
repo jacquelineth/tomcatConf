@@ -51,4 +51,8 @@ The configured DB is 'embedded Derby' stored in /data, other JDBC jars should be
 There is also a setup to use Derby Network server with startDeby.bat/stopDerby.bat, adjust the datasource definition accordingly.
 
 
+#### Apache Solr
+Decision Center Business Console operates a background indexer [Apache Lucene Solr](https://lucene.apache.org/solr/) 
+It can be configured from [Solr Parameters](https://www.ibm.com/support/knowledgecenter/SSQP76_8.7.0/com.ibm.odm.distrib.config.wlp/shared_config_topics/con_dcbc_solr_parameters.html)
+
 To know more on ODM : [ODM site](http://www-03.ibm.com/software/products/en/category/operational-decision-management)

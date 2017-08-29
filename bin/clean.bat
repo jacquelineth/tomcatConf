@@ -9,7 +9,8 @@ pushd %CATALINA_BASE%
 rmdir /S /Q logs
 rmdir /S /Q  temp
 rmdir /S /Q  work
-mkdir logs temp work
+rmdir /S /Q SolrDataDir
+mkdir logs temp work SolrDataDir
 echo Cleaned logs temp work
 
 if ""%1"" == """" goto noData
