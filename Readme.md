@@ -27,6 +27,17 @@
   - and  conf/ subfolders to adjust your deployed WAR files location in `docBase` attribute.
   - you may also adjust the JDBC driver in each deployment XML
 
+### ZeroConf Branch
+This is a streamlined version that deploys all DC and RES webapps while only editing 2 config files:
+1. Edit bin/setenv.bat to adjust `CATALINA_HOME`  , `JAVA_HOME` , `ODM_HOME` .
+2. Edit last 2 lines of conf/catalina.properties to adjust the name of the embedded Derby folder URL (rtsdb and resdb )
+
+```shell
+        teamserver.datasource.derby.name=jdbc:derby:../data/rtsdb88;create=true
+        res.datasource.derby.name=jdbc:derby:../data/resdb88;create=true
+ ```   
+
+DC modules is deployed over http://127.0.0.1:8080 while RES modules are on http://localhost:8080
 
 
 ### TCP/IP Mode

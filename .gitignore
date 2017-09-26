@@ -8,7 +8,7 @@ bin/derby.log
 
 data/
 
-*.swp
+*.swps
 *~
 **/*.orig
 **/*~
@@ -17,3 +17,5 @@ webappDefault/**
 webapps88/*/**
 webapps88b/**
 tempdecisioncenter-solr-dir/**
+webappDefault/**
+webapps88/*/**
