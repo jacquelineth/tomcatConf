@@ -91,11 +91,16 @@
          connector should be using the OpenSSL style configuration
          described in the APR documentation -->
     
-    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+    <!-- <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
                maxThreads="150" scheme="https" secure="true"
 	       clientAuth="false" sslProtocol="TLS" 
-	       keystoreFile="${catalina.base}/bin/keystore.jks" keystorePass="tomcat" />
-   
+	       keystoreFile="${catalina.base}/bin/keystore.jks" keystorePass="tomcat" /> -->
+
+    <Connector SSLEnabled="true" acceptCount="100" clientAuth="false"
+    disableUploadTimeout="true" enableLookups="false" maxThreads="25"
+    port="8443" keystoreFile="${catalina.base}/bin/keystore.jks" keystorePass="tomcat"
+    protocol="org.apache.coyote.http11.Http11NioProtocol" scheme="https"
+    secure="true" sslProtocol="TLS" />   
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
     <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
@@ -138,7 +143,7 @@
            />-->
       </Realm>
 
-      <Host name="localhost"  appBase="webapps88" unpackWARs="true" autoDeploy="true" deployOnStartup="false">
+      <Host name="localhost"  appBase="webapps88b" unpackWARs="true" autoDeploy="true" deployOnStartup="false">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
