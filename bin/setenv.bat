@@ -4,6 +4,8 @@ set CATALINA_HOME=C:\DevTools\apache-tomcat-8.0.41
 set JAVA_HOME=C:\jdk1.8.0_121
 set ODM_HOME=C:\IBM\ODM89
 set PATH=.;%JAVA_HOME%\bin;%CATALINA_HOME%\bin;C:\Windows\System32;C:\Windows\System
+set java.io.tmpdir=%~dp0%..\temp
+echo Temp folder set to %java.io.tmpdir%
 
 
 REM Computed
