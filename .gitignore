@@ -20,3 +20,5 @@ webapps89/**
 SolrDataDir/**
 lib/derbyLocale_??*.jar
 webapps89_res*/**
+SolrTempDir/index/**
+SolrTempDir/spellchecker/**
