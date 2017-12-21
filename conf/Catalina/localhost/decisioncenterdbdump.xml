@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Context docBase="C:\Cases\Tools\DBdump\decisioncenter-dbdump.war" reloadable="true">
+	    <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container" 
+              defaultTransactionIsolation="READ_COMMITTED"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=100)"
+        username="ILOG" password="ILOG"
+        driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
+        url="jdbc:derby:../data/rtsdb87;create=true"  /> 
+</Context>
