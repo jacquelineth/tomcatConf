@@ -50,13 +50,13 @@ web.xml too for that, though **** -->
      username="resdbAdmin" password="resdbAdmin" 
      driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
      url="jdbc:derby:../data/resDb88;create=true;traceFile=trace.out;traceLevel=2;traceDirectory=../logs" />-->
- 	   <Resource auth="Container" 
+ 	   <!-- <Resource auth="Container" 
       defaultTransactionIsolation="READ_COMMITTED"
       driverClassName="org.h2.Driver" 
       name="jdbc/resdatasource" 
       username="tomcat" password="tomcat" 
       type="javax.sql.DataSource" 
-      url="jdbc:h2:file:${catalina.base}/data/h2resdb;create=true;LOCK_TIMEOUT=20000"      /> 
+      url="jdbc:h2:file:${catalina.base}/data/h2resdb;create=true;LOCK_TIMEOUT=20000"      />  -->
      
 
       <!--<Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container"
@@ -75,11 +75,36 @@ web.xml too for that, though **** -->
       <Resource auth="Container" 
 			  defaultTransactionIsolation="READ_COMMITTED"
         jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=500)"
-			  driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
-			  name="jdbc/ilogDataSource" 
-			  username="sa" password="" 
+			  driverClassName="org.apache.derby.jdbc.ClientDriver"  
+			  name="jdbc/resdatasource" 
+			  username="resdb" password="resdb" 
 			  type="javax.sql.DataSource" 
-			  url="jdbc:derby:../data/rtsdb88;create=true" /> 
+        url="jdbc:derby://localhost:1527/resDB88;create=true;traceFile=trace.out;traceLevel=2;traceDirectory=../logs" />
+      <Resource auth="Container" 
+			  defaultTransactionIsolation="READ_COMMITTED"
+        jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=500)"
+			  driverClassName="org.apache.derby.jdbc.ClientDriver"  
+			  name="jdbc/ilogDataSource" 
+			  username="rtsuser" password="rtsUser" 
+			  type="javax.sql.DataSource" 
+        url="jdbc:derby://localhost:1527/rtsDb88;create=true;traceFile=trace.out;traceLevel=2;traceDirectory=../logs" />
+      <Resource auth="Container" 
+			  defaultTransactionIsolation="READ_COMMITTED"
+        jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=500)"
+			  driverClassName="org.apache.derby.jdbc.ClientDriver"  
+			  name="jdbc/ilogDataSourceES" 
+			  username="rtsuser" password="rtsUser" 
+			  type="javax.sql.DataSource" 
+        url="jdbc:derby://localhost:1527/rtsDb88es;create=true;traceFile=traceES.out;traceLevel=2;traceDirectory=../logs" />
+      <Resource auth="Container" 
+			  defaultTransactionIsolation="READ_COMMITTED"
+        jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=500)"
+			  driverClassName="org.apache.derby.jdbc.ClientDriver"  
+			  name="jdbc/ilogDataSourceDE" 
+			  username="rtsuser" password="rtsUser" 
+			  type="javax.sql.DataSource" 
+        url="jdbc:derby://localhost:1527/rtsDb88de;create=true;traceFile=traceDE.out;traceLevel=2;traceDirectory=../logs" />
+			  <!--url="jdbc:derby:../data/rtsdb88;create=true" /> -->
         <!--<Resource auth="Container" 
       defaultTransactionIsolation="READ_COMMITTED"
       driverClassName="org.postgresql.Driver" 
