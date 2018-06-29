@@ -20,3 +20,12 @@ webapps89/*
 webapps89_res*/*
 webapps89_res*/*/**
 lib/derbyLocale_*.jar
+webapps88b/**
+webapps89/**
+SolrDataDir/**
+lib/derbyLocale_??*.jar
+webapps89_res*/**
+SolrTempDir/index/**
+SolrTempDir/spellchecker/**
+RTS.Build_sp19075/**
+bin/DCSearchIndex/**
