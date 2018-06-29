@@ -22,3 +22,5 @@ lib/derbyLocale_??*.jar
 webapps89_res*/**
 SolrTempDir/index/**
 SolrTempDir/spellchecker/**
+RTS.Build_sp19075/**
+bin/DCSearchIndex/**
