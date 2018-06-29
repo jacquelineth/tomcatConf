@@ -1,0 +1,51 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "derbyStart",
+            "type": "shell",
+            "windows": {
+                "command": "cd data&& ..\\bin\\startDerby.bat"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$go"
+            ]
+        },
+        {
+            "label": "derbyStop",
+            "type": "shell",
+            "windows": {
+                "command": ".\\bin\\stopDerby.bat"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$go"
+            ]
+        },
+        {
+            "label": "startTomcat",
+            "type": "shell",
+            "windows": {
+                "command": "cd bin &&startup.bat"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$go"
+            ]
+        },
+        {
+            "label": "stopTomcat",
+            "type": "shell",
+            "windows": {
+                "command": "cd bin &&shutdown.bat"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$go"
+            ]
+        }
+    ]
+}
