@@ -1,4 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <Context  docBase="DecisionService.war" reloadable="false" crossContext="true" renewThreadsWhenStoppingContext="true">
     <ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource" type="javax.sql.DataSource"/>
+    <Parameter name="xuDumpSchedulerInterval" value="5000000" override="false" />
+    <Parameter name="XuDumpSchedulerEnabled" value="false" override="false" />
 </Context>

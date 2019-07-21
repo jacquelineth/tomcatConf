@@ -1,0 +1,5 @@
+<Context  docBase="decisioncenter-api.war" reloadable="true" crossContext="true">
+      <!-- <ResourceLink name="jdbc/ilogDataSource" global="jdbc/ilogDataSource" type="javax.sql.DataSource"/> -->
+      <!-- <ResourceLink name="jdbc/ilogDataSourceDE" global="jdbc/ilogDataSourceDE" type="javax.sql.DataSource"/>
+      <ResourceLink name="jdbc/ilogDataSourceES" global="jdbc/ilogDataSourceES" type="javax.sql.DataSource"/> -->
+</Context>

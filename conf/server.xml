@@ -179,7 +179,7 @@
       <Host name="w530ilog"  appBase="webapps89_res.1"
             unpackWARs="true" autoDeploy="true" deployOnStartup="true" >
 
-        <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster" channelSendOptions="8">
+        <!-- <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster" channelSendOptions="8">
 
             <Manager className="org.apache.catalina.ha.session.DeltaManager"
                      expireSessionsOnShutdown="false"
@@ -210,7 +210,7 @@
 
             <Valve className="org.apache.catalina.ha.tcp.ReplicationValve" statistics="true"
                     filter=".*?(?:\.js|\.css|\.ico|\.gif|\.png|\.jpg|\.rpc|\.html|/unauthenticatedLogout|/logout|/error403.jsp|/error403b.jsp|/error408.jsp)$" />
-              <!--     filter=".*remoting.*|.*ervlet.*" /> -->
+                   filter=".*remoting.*|.*ervlet.*" />
             <Valve className="org.apache.catalina.ha.session.JvmRouteBinderValve"/>
 
             <Deployer className="org.apache.catalina.ha.deploy.FarmWarDeployer"
@@ -220,7 +220,7 @@
                       watchEnabled="false"/>
 
             <ClusterListener className="org.apache.catalina.ha.session.ClusterSessionListener"/>
-        </Cluster>
+        </Cluster> -->
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
