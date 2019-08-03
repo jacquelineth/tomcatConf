@@ -48,20 +48,18 @@ web.xml too for that, though **** -->
 	  <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container" driverClassName="org.h2.Driver" url="jdbc:h2:C:/Cases/tomcat/data/h2/resdb8102;MODE=HSQLDB;auto_server=true" username="ilog"	password="ilog"  defaultTransactionIsolation="READ_COMMITTED" />
     
 	  <!-- <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container" driverClassName="org.h2.Driver" url="jdbc:h2:C:/Cases/tomcat/data/h2/rtsdb8102;MODE=HSQLDB;auto_server=true"	username="ilog"	password="ilog"/> -->
-    <Resource name="jdbc/ilogDataSource"
-    auth="Container"
-    factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
-    driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-    type="javax.sql.DataSource"
-    maxActive="50"
-    maxIdle="10"
-    maxWait="15000"
-    username="ilog"
-    password="ilog"
-    url="jdbc:sqlserver://127.0.0.1:1433"
-    removeAbandoned="true"
-    removeAbandonedTimeout="30"
-    logAbandoned="true" /> 
+    <Resource auth="Container"
+             name="jdbc/ilogDataSource"
+             factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+             type="javax.sql.DataSource"
+             driverClassName="oracle.jdbc.OracleDriver"
+             url="jdbc:oracle:oci:/@localhost:1521"
+             ignoreExceptionOnPreLoad="false"
+             username="scott"
+             password="tiger"             
+
+    />
+
 
 
 
