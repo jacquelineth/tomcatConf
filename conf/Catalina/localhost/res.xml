@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <Context  docBase="res.war" reloadable="true">
     <Logger className="org.apache.catalina.logger.FileLogger" prefix="odm89_res_log" suffix=".txt" timestamp="true" />
-<ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource" type="javax.sql.DataSource"/>
+    <ResourceLink name="jdbc/resdatasource" global="jdbc/resdatasource" type="javax.sql.DataSource"/>
+
     <!--Modify the WEB-INF/web.xml to set the modified context path for teamserver, testing, decisionService -->
     <Parameter name="management.protocol" value="tcpip" override="false" />
     <Parameter name="ilog.rules.res.XOM_IN_RULEAPP_ARCHIVE" value="true" override="false" />

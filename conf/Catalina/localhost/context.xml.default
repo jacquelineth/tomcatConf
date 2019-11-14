@@ -53,7 +53,7 @@ web.xml too for that, though **** -->
              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
              type="javax.sql.DataSource"
              driverClassName="oracle.jdbc.OracleDriver"
-             url="jdbc:oracle:oci:/@localhost:1521"
+             url="jdbc:oracle:thin:/@localhost:1521"
              ignoreExceptionOnPreLoad="false"
              username="scott"
              password="tiger"             

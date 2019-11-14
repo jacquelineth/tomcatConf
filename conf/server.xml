@@ -50,7 +50,6 @@
     	      pathname="conf/tomcat-users.xml" />
 
 
-
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
@@ -105,7 +104,7 @@
     <!-- You should set jvmRoute to support load-balancing via AJP ie :
     <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
     -->
-    <Engine name="CatalinaEngine" defaultHost="localhost" jvmRoute="node1">
+    <Engine name="Catalina" defaultHost="localhost" jvmRoute="node1">
 
       <!--For clustering, please take a look at documentation at:
           /docs/cluster-howto.html  (simple how to)
@@ -124,7 +123,7 @@
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
       </Realm>
 
-      <Host name="localhost"  appBase="webapps89" unpackWARs="true" autoDeploy="true" deployOnStartup="true">
+      <Host name="localhost"  appBase="webapps8102" unpackWARs="true" autoDeploy="true" deployOnStartup="true">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
@@ -139,103 +138,5 @@
 
     </Engine>
   </Service>
-  <Service name="CatalinaAPI">
-        <Executor name="tomcatThreadPoolAPI" namePrefix="catalinaAPI-exec-"     daemon="false"    maxThreads="150" minSpareThreads="0" threadRenewalDelay="2000" />
-        <Connector executor="tomcatThreadPoolAPI" port="8083" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
-        <Connector executor="tomcatThreadPoolAPI" port="8110" protocol="AJP/1.3" redirectPort="8443" allowTrace="true" />
-          <!-- request.useSecret="true"  request.secret="single" requiredSecret="single" -->
-          
-        <Engine name="CatalinaAPIEngine" defaultHost="localhost">
-          <Realm className="org.apache.catalina.realm.LockOutRealm">
-            <Realm className="org.apache.catalina.realm.UserDatabaseRealm"  resourceName="UserDatabase"/>
-          </Realm>     
-          <Host name="localhost"  appBase="webapps89_res" unpackWARs="true" autoDeploy="true" deployOnStartup="true">
-            <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
-                   prefix="localhostSingle_access_log" suffix=".txt"
-                   pattern="%h %l %u  %U %t &quot;%r&quot;  %S  %s %b " />
 
-          </Host>    
-        </Engine>
-  </Service>
-  <Service name="Catalina2">
-    <!--The connectors can use a shared executor, you can define one or more named thread pools-->
-   
-    <Executor name="tomcatThreadPool" namePrefix="catalina2-exec-"     daemon="false"    maxThreads="150" minSpareThreads="0" threadRenewalDelay="2000" />
-   
- 
-    <Connector  executor="tomcatThreadPool" port="8082" protocol="HTTP/1.1"
-               connectionTimeout="20000"
-               redirectPort="8443" />
-    <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector executor="tomcatThreadPool" port="8209" protocol="AJP/1.3" redirectPort="8443" allowTrace="true"  />
- 
-    <Engine name="Catalina2Engine" defaultHost="w530ilog" jvmRoute="node2">
-
-      <Realm className="org.apache.catalina.realm.LockOutRealm">
-         <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
-               resourceName="UserDatabase"/>
-      </Realm>
-
-      <Host name="w530ilog"  appBase="webapps89_res.1"
-            unpackWARs="true" autoDeploy="true" deployOnStartup="true" >
-
-        <!-- <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster" channelSendOptions="8">
-
-            <Manager className="org.apache.catalina.ha.session.DeltaManager"
-                     expireSessionsOnShutdown="false"
-                     notifyListenersOnReplication="false"
-                     notifySessionListenersOnReplication="false"
-                     notifyContainerListenersOnReplication="false"
-                     sessionAttributeFilter="sessionExporter"/>
-
-            <Channel className="org.apache.catalina.tribes.group.GroupChannel">
-              <Membership className="org.apache.catalina.tribes.membership.McastService"
-                          address="228.0.0.4"
-                          port="45564"
-                          frequency="500"
-                          dropTime="3000"/>
-              <Receiver className="org.apache.catalina.tribes.transport.nio.NioReceiver"
-                        address="auto"
-                        port="4200"
-                        autoBind="100"
-                        selectorTimeout="5000"
-                        maxThreads="6"/>
-
-              <Sender className="org.apache.catalina.tribes.transport.ReplicationTransmitter">
-                <Transport className="org.apache.catalina.tribes.transport.nio.PooledParallelSender"/>
-              </Sender>
-              <Interceptor className="org.apache.catalina.tribes.group.interceptors.TcpFailureDetector"/>
-              <Interceptor className="org.apache.catalina.tribes.group.interceptors.MessageDispatch15Interceptor"/>
-            </Channel>
-
-            <Valve className="org.apache.catalina.ha.tcp.ReplicationValve" statistics="true"
-                    filter=".*?(?:\.js|\.css|\.ico|\.gif|\.png|\.jpg|\.rpc|\.html|/unauthenticatedLogout|/logout|/error403.jsp|/error403b.jsp|/error408.jsp)$" />
-                   filter=".*remoting.*|.*ervlet.*" />
-            <Valve className="org.apache.catalina.ha.session.JvmRouteBinderValve"/>
-
-            <Deployer className="org.apache.catalina.ha.deploy.FarmWarDeployer"
-                      tempDir="temp/war-temp/"
-                      deployDir="temp/war-deploy/"
-                      watchDir="temp/war-listen/"
-                      watchEnabled="false"/>
-
-            <ClusterListener className="org.apache.catalina.ha.session.ClusterSessionListener"/>
-        </Cluster> -->
-
-        <!-- SingleSignOn valve, share authentication between web applications
-             Documentation at: /docs/config/valve.html -->
-        <!--
-        <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
-        -->
-
-        <!-- Access log processes all example.
-             Documentation at: /docs/config/valve.html
-             Note: The pattern used is equivalent to using pattern="common" -->
-        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
-               prefix="localhost_access2_log" suffix=".txt"
-               pattern="%h %l %u  %U %t &quot;%r&quot;  %S  %s %b " />
-
-      </Host>
-    </Engine>
-  </Service>
 </Server>

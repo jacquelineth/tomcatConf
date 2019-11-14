@@ -16,7 +16,8 @@ data/
 webappDefault/**
 webapps88/*/**
 webapps89/*/**
-webapps89/*
+webapps8*/*/**
+webapps8*/*
 webapps89_res*/*
 webapps89_res*/*/**
 lib/derbyLocale_*.jar
@@ -29,3 +30,7 @@ SolrTempDir/index/**
 SolrTempDir/spellchecker/**
 RTS.Build_sp19075/**
 bin/DCSearchIndex/**
+bin/res-console*.log
+
+bin/resdb/*
+/res-console*.log
