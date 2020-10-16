@@ -1,6 +1,6 @@
 REM Adjust these variables
 echo off
-set CATALINA_HOME=C:\DevTools\apache-tomcat-8.5.43
+set CATALINA_HOME=C:\DevTools\apache-tomcat-9.0.37
 set JAVA_HOME=C:\jdk8_211
 set ODM_HOME=C:\IBM\ODM8102
 set PATH=.;%JAVA_HOME%\bin;%CATALINA_HOME%\bin;C:\Windows\System32;C:\Windows\System
