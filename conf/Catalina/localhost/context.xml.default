@@ -45,9 +45,9 @@ web.xml too for that, though **** -->
      	<!-- RES data source -->
 
     <!-- <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container" username="resdbAdmin" password="resdbAdmin" driverClassName="org.apache.derby.jdbc.EmbeddedDriver"  url="jdbc:derby:../data/resDb89;create=true" /> -->
-	  <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container" driverClassName="org.h2.Driver" url="jdbc:h2:C:/Cases/tomcat/data/h2/resdb8102;MODE=HSQLDB;auto_server=true" username="ilog"	password="ilog"  defaultTransactionIsolation="READ_COMMITTED" />
+	  <Resource name="jdbc/resdatasource" type="javax.sql.DataSource" auth="Container" driverClassName="org.h2.Driver" url="jdbc:h2:C:/Cases/tomcat/data/h2/resdb8104;MODE=HSQLDB;auto_server=true" username="ilog"	password="ilog"  defaultTransactionIsolation="READ_COMMITTED" />
     
-	  <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container" driverClassName="org.h2.Driver" url="jdbc:h2:C:/Cases/tomcat/data/h2/rtsdb8102;MODE=HSQLDB;auto_server=true"	username="ilog"	password="ilog"/>
+	  <Resource name="jdbc/ilogDataSource" type="javax.sql.DataSource" auth="Container" driverClassName="org.h2.Driver" url="jdbc:h2:C:/Cases/tomcat/data/h2/rtsdb8104;MODE=HSQLDB;auto_server=true"	username="ilog"	password="ilog"/>
     <!-- <Resource auth="Container"
              name="jdbc/ilogDataSource"
              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
